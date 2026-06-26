@@ -9,7 +9,8 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
-  trailingSlash: true,
+  // trailingSlash 仅在生产构建启用，避免 dev 模式下 basePath 重定向死循环
+  trailingSlash: isProd,
   basePath,
   // 静态资源必须带子路径，否则 GitHub Pages 上会 404
   assetPrefix: isProd ? `https://jiangyytong126-arch.github.io${basePath}` : '',
