@@ -103,37 +103,33 @@ export default function HomePage() {
                 {publications.map((pub) => (
                   <article
                     key={pub.title}
-                    className="flex aspect-[5/1] w-full overflow-hidden rounded-lg bg-white"
+                    className="flex w-full overflow-hidden rounded-lg bg-white"
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
-                    <div className="h-full w-[38%] flex-shrink-0 overflow-hidden bg-slate-200">
+                    <div className="w-[38%] flex-shrink-0 self-stretch overflow-hidden bg-slate-100">
                       {pub.thumbnail ? (
                         <img
                           src={pub.thumbnail}
                           alt={pub.thumbnailAlt ?? pub.title}
                           className="h-full w-full object-cover"
                         />
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center text-sm text-slate-400">
-                          No image
-                        </div>
-                      )}
+                      ) : null}
                     </div>
-                    <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 px-6 py-4 lg:px-8">
+                    <div className="min-w-0 flex-1 space-y-2 px-6 py-5 lg:px-8">
                       {pub.link ? (
                         <a
                           href={pub.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-lg font-semibold leading-snug text-slate-900 hover:underline"
+                          className="block text-base font-semibold leading-relaxed text-slate-900 hover:underline"
                         >
                           {pub.title}
                         </a>
                       ) : (
-                        <p className="text-lg font-semibold leading-snug text-slate-900">{pub.title}</p>
+                        <p className="text-base font-semibold leading-relaxed text-slate-900">{pub.title}</p>
                       )}
-                      <p className="text-base text-slate-600">{pub.venue}</p>
-                      <p className="text-base text-slate-500">{pub.authors}</p>
+                      <p className="text-base leading-relaxed text-slate-600">{pub.venue}</p>
+                      <p className="text-base leading-relaxed text-slate-500">{pub.authors}</p>
                     </div>
                   </article>
                 ))}
