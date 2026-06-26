@@ -86,19 +86,20 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 px-6 py-4 lg:px-8">
-                      <p className="text-lg font-semibold leading-snug text-slate-900">{pub.title}</p>
-                      <p className="text-base text-slate-600">{pub.venue}</p>
-                      <p className="text-base text-slate-500">{pub.authors}</p>
-                      {pub.link && (
+                      {pub.link ? (
                         <a
                           href={pub.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1 text-sm text-slate-700 hover:underline"
+                          className="text-lg font-semibold leading-snug text-slate-900 hover:underline"
                         >
-                          Link <ArrowUpRight className="h-3.5 w-3.5" />
+                          {pub.title}
                         </a>
+                      ) : (
+                        <p className="text-lg font-semibold leading-snug text-slate-900">{pub.title}</p>
                       )}
+                      <p className="text-base text-slate-600">{pub.venue}</p>
+                      <p className="text-base text-slate-500">{pub.authors}</p>
                     </div>
                   </article>
                 ))}
