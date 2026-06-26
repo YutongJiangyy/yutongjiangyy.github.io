@@ -77,7 +77,8 @@ export default function HomePage() {
                 {publications.map((pub) => (
                   <article
                     key={pub.title}
-                    className="flex aspect-[5/1] w-full overflow-hidden rounded-lg bg-white shadow-md"
+                    className="flex aspect-[5/1] w-full overflow-hidden rounded-lg bg-white"
+                    style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
                     <div className="h-full w-[38%] flex-shrink-0 bg-slate-200">
                       <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
