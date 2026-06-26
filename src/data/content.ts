@@ -139,11 +139,12 @@ export const publications: Publication[] = [
   {
     title:
       "Bridging Visual Asymmetry: Exploring AI-Mediated Communication Support for Parents with Visual Impairments and Their Sighted Children in Outdoor Informal Learning",
-    authors: "Y. Jiang, Z. Zhang, J. Xu, Q. Zheng, Q. Guo, ... Q. Wang",
+    authors:
+      "Yutong Jiang, Zixuan Zhang, Jiaying Xu, Qingyun Zheng, Qian Guo, Qinyang Wang, Qi Wang, Guanhong Liu",
     venue: "CHI Conference on Human Factors in Computing Systems (CHI) 2026",
     year: "2026",
     badge: "CHI 2026",
-    link: "",
+    link: "https://doi.org/10.1145/3772318.3790604",
     thumbnail: "/publications/chi26_1.jpg",
     thumbnailAlt:
       "A distributed AI system supporting joint attention and communication between visually impaired parents and sighted children during outdoor informal learning.",
@@ -152,11 +153,11 @@ export const publications: Publication[] = [
     title:
       "PrivWeb: Unobtrusive and Content-aware Privacy Protection for Web Agents",
     authors:
-      "S. Zhang*, Y. Jiang*, R. Ma, Y. Yang, M. Xu, Z. Huang, ... H. Li (*equal contribution)",
+      "Shuning Zhang*, Yutong Jiang*, Rongjun Ma, Yuting Yang, Mingyao Xu, Zhixin Huang, Xin Yi, Hewu Li (*equal contribution)",
     venue: "CHI Conference on Human Factors in Computing Systems (CHI) 2026",
     year: "2026",
     badge: "CHI 2026",
-    link: "",
+    link: "https://doi.org/10.1145/3772318.3790919",
     thumbnail: "/publications/chi26_2.jpg",
     thumbnailAlt:
       "A privacy-aware system that detects and manages sensitive information during web-agent interactions.",
@@ -164,11 +165,11 @@ export const publications: Publication[] = [
   {
     title:
       "When Stars Shine through Silence: Affective Visualization as Empowerment for Victims of Subway Harassment",
-    authors: "Y. Jiang, X. Yan, C. Zheng, Y. Shi, Q. Chen, N. Cao",
+    authors: "Yutong Jiang, Xiaoke Yan, Chuyi Zheng, Yang Shi, Qing Chen, Nan Cao",
     venue: "SIGGRAPH Asia Posters 2025",
     year: "2025",
     badge: "SIGGRAPH Asia Posters 2025",
-    link: "https://dl.acm.org/doi/full/10.1145/3757374.3771477",
+    link: "https://doi.org/10.1145/3757374.3771477",
     thumbnail: "/publications/siggraph25.png",
     thumbnailAlt:
       "An affective visualization system highlighting emotional experiences of subway harassment victims.",
@@ -177,11 +178,11 @@ export const publications: Publication[] = [
     title:
       "I Can Only Guess Where She's Looking: Challenges and Design Strategies for Supporting Outdoor Informal Learning Between Parents with Visual Impairments and Their Sighted Children",
     authors:
-      "Y. Jiang*, Q. Zheng*, Z. Zhang*, Q. Guo*, J. Xu*, S. Xu, G. Liu (*equal contribution)",
+      "Yutong Jiang*, Qingyun Zheng*, Zixuan Zhang*, Qian Guo*, Jiaying Xu*, Shuchang Xu, Guanhong Liu (*equal contribution)",
     venue: "CSCW Companion 2025",
     year: "2025",
     badge: "CSCW Companion 2025",
-    link: "https://dl.acm.org/doi/full/10.1145/3715070.3749238",
+    link: "https://doi.org/10.1145/3715070.3749238",
     thumbnail: "/publications/cscw25.jpg",
     thumbnailAlt:
       "A study investigating communication and attention challenges in informal learning between visually impaired parents and sighted children.",
@@ -189,11 +190,11 @@ export const publications: Publication[] = [
   {
     title:
       "City of Wander: Visualizing Scientific Literature for Knowledge Exploration Using Visual Metaphors",
-    authors: "G. Liu, Y. Jiang, X. Yan, N. Cao, Y. Shi",
+    authors: "Guanhong Liu, Yutong Jiang, Xiaoke Yan, Nan Cao, Yang Shi",
     venue: "CHI Extended Abstracts 2025",
     year: "2025",
     badge: "CHI EA 2025",
-    link: "https://dl.acm.org/doi/full/10.1145/3706599.3720280",
+    link: "https://doi.org/10.1145/3706599.3720280",
     thumbnail: "/publications/chiea25.png",
     thumbnailAlt:
       "A visualization system using metaphor-driven layouts to explore scientific literature.",
