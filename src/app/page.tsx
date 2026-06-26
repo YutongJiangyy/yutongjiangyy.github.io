@@ -3,19 +3,19 @@ import { bio, news, researchInterestText, publications, internships, awards } fr
 import type { ExperienceItem } from "@/data/content";
 
 export default function HomePage() {
-  const scholarLink = bio.social.find((link) => link.platform === "google-scholar");
+  const cvLink = bio.cvLinks[0];
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-20 bg-[#e8ede5] py-3">
-        <nav className="flex justify-end gap-8 px-4 text-sm font-medium text-slate-700 lg:px-[180px]">
+      <header className="sticky top-0 z-20 bg-[#D1FAE5] py-3">
+        <nav className="flex justify-end gap-8 px-4 text-sm font-medium text-slate-700 lg:px-[120px]">
           <a href="#publications" className="hover:text-slate-900">Publication</a>
           <a href="#internship" className="hover:text-slate-900">Internship</a>
           <a href="#awards" className="hover:text-slate-900">Awards</a>
         </nav>
       </header>
 
-      <div className="px-4 py-8 lg:px-[180px] lg:py-12">
+      <div className="px-4 py-8 lg:px-[120px] lg:py-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[260px_1fr] lg:gap-20">
           <aside className="space-y-10">
             <div className="flex flex-col items-start">
@@ -32,35 +32,16 @@ export default function HomePage() {
                   {[bio.title, bio.affiliation].filter(Boolean).join(" · ")}
                 </p>
               )}
-              <div className="mt-5 flex flex-wrap gap-2">
+              {cvLink && (
                 <a
-                  href={`mailto:${bio.email}`}
-                  className="rounded-md border border-slate-300 px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+                  href={cvLink.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 rounded-md border border-slate-300 px-4 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
                 >
-                  Email
+                  CV
                 </a>
-                {bio.cvLinks.map((cv) => (
-                  <a
-                    key={cv.label}
-                    href={cv.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-md border border-slate-300 px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-                  >
-                    {cv.label.replace(/\s*\(.*\)/, "")}
-                  </a>
-                ))}
-                {scholarLink && (
-                  <a
-                    href={scholarLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-md border border-slate-300 px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-                  >
-                    Scholar
-                  </a>
-                )}
-              </div>
+              )}
             </div>
 
             <section id="news">
@@ -96,16 +77,14 @@ export default function HomePage() {
                 {publications.map((pub) => (
                   <article
                     key={pub.title}
-                    className="flex items-start gap-6 rounded-lg bg-white p-5 shadow-md"
+                    className="flex aspect-[5/1] w-full overflow-hidden rounded-lg bg-white shadow-md"
                   >
-                    <div className="w-[42%] flex-shrink-0">
-                      <div className="aspect-[4/3] w-full overflow-hidden rounded bg-slate-200">
-                        <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
-                          thumb
-                        </div>
+                    <div className="h-full w-[38%] flex-shrink-0 bg-slate-200">
+                      <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
+                        thumb
                       </div>
                     </div>
-                    <div className="min-w-0 flex-1 space-y-2">
+                    <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 px-6 py-4 lg:px-8">
                       <p className="text-lg font-semibold leading-snug text-slate-900">{pub.title}</p>
                       <p className="text-base text-slate-600">{pub.venue}</p>
                       <p className="text-base text-slate-500">{pub.authors}</p>
