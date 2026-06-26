@@ -1,9 +1,11 @@
-import { ArrowUpRight } from "lucide-react";
 import { bio, news, researchInterestText, publications, internships, awards } from "@/data/content";
 import type { ExperienceItem } from "@/data/content";
+import { SocialIcon } from "@/components/social-icons";
 
 export default function HomePage() {
   const cvLink = bio.cvLinks[0];
+  const emailLink = bio.social.find((l) => l.platform === "email");
+  const scholarLink = bio.social.find((l) => l.platform === "google-scholar");
 
   return (
     <div className="min-h-screen">
@@ -32,16 +34,38 @@ export default function HomePage() {
                   {[bio.title, bio.affiliation].filter(Boolean).join(" · ")}
                 </p>
               )}
-              {cvLink && (
-                <a
-                  href={cvLink.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 rounded-md border border-slate-300 px-4 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-                >
-                  CV
-                </a>
-              )}
+              <div className="mt-5 flex items-center gap-4">
+                {cvLink && (
+                  <a
+                    href={cvLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-medium text-slate-700 hover:text-slate-900"
+                  >
+                    CV
+                  </a>
+                )}
+                {emailLink && (
+                  <a
+                    href={emailLink.href}
+                    className="text-slate-500 hover:text-slate-900"
+                    aria-label="Email"
+                  >
+                    <SocialIcon platform="email" className="h-5 w-5" />
+                  </a>
+                )}
+                {scholarLink && (
+                  <a
+                    href={scholarLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-slate-500 hover:text-slate-900"
+                    aria-label="Google Scholar"
+                  >
+                    <SocialIcon platform="google-scholar" className="h-5 w-5" />
+                  </a>
+                )}
+              </div>
             </div>
 
             <section id="news">
