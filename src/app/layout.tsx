@@ -20,11 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans bg-white text-foreground antialiased">
-        <div className="min-h-screen">
-          <main className="mx-auto max-w-5xl px-4 py-10 lg:px-6 lg:py-16">
-            {children}
-          </main>
-        </div>
+        {children}
       </body>
     </html>
   );
