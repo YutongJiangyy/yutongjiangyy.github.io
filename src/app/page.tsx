@@ -109,7 +109,7 @@ export default function HomePage() {
                     className="grid w-full min-w-0 overflow-hidden rounded-lg border border-slate-100 bg-white md:grid-cols-[minmax(220px,36%)_minmax(0,1fr)]"
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
-                    <div className="relative aspect-[16/9] min-h-[170px] overflow-hidden bg-slate-50 md:h-full md:min-h-[200px]">
+                    <div className="relative aspect-[16/9] w-full min-w-0 overflow-hidden bg-slate-50 md:aspect-auto md:min-h-[200px]">
                       {pub.thumbnail && (
                         <Image
                           src={pub.thumbnail}
