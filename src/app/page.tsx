@@ -12,8 +12,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-20 bg-[#D1FAE5] py-3">
-        <nav className="mx-auto flex max-w-[1680px] justify-end gap-5 px-4 text-sm font-medium text-slate-700 sm:gap-8 sm:px-6 lg:px-10 xl:px-16 2xl:px-[120px]">
+      <header className="sticky top-0 z-20 bg-[#FFFEFC] py-3">
+        <nav className="mx-auto flex max-w-[1680px] justify-end gap-5 px-4 text-sm font-medium text-[#2F1C0E] sm:gap-8 sm:px-6 lg:px-10 xl:px-16 2xl:px-[120px]">
           <a href="#publications" className="hover:text-slate-900">Publication</a>
           <a href="#internship" className="hover:text-slate-900">Internship</a>
           <a href="#awards" className="hover:text-slate-900">Awards</a>
@@ -33,7 +33,7 @@ export default function HomePage() {
                   unoptimized
                 />
               </div>
-              <p className="mt-5 text-2xl font-semibold tracking-tight text-slate-900">
+              <p className="mt-5 text-2xl font-semibold tracking-tight text-[#2F1C0E]">
                 {bio.name}
               </p>
               <div className="mt-1 space-y-1 text-sm text-slate-500">
@@ -75,7 +75,7 @@ export default function HomePage() {
             </div>
 
             <section id="news">
-              <h2 className="mb-4 text-base font-semibold uppercase tracking-wider text-black">
+              <h2 className="mb-4 text-base font-semibold uppercase tracking-wider text-[#2F1C0E]">
                 News
               </h2>
               <div className="space-y-5">
@@ -92,7 +92,7 @@ export default function HomePage() {
           <div className="w-full min-w-0 space-y-14">
             <section>
               <h2
-                className="mb-4 text-2xl font-bold italic leading-none text-black"
+                className="mb-4 text-2xl font-bold italic leading-none text-[#2F1C0E]"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Research Interest
@@ -104,7 +104,7 @@ export default function HomePage() {
 
             <section id="publications">
               <h2
-                className="mb-5 text-2xl font-bold italic leading-none text-black"
+                className="mb-5 text-2xl font-bold italic leading-none text-[#2F1C0E]"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Publication
@@ -132,12 +132,12 @@ export default function HomePage() {
                           href={pub.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="block break-words text-base font-semibold leading-relaxed text-slate-900 hover:underline"
+                          className="block break-words text-base font-semibold leading-relaxed text-[#2F1C0E] hover:underline"
                         >
                           {pub.title}
                         </a>
                       ) : (
-                        <p className="text-base font-semibold leading-relaxed text-slate-900">{pub.title}</p>
+                        <p className="text-base font-semibold leading-relaxed text-[#2F1C0E]">{pub.title}</p>
                       )}
                       <p className="text-sm leading-relaxed text-slate-500">{pub.authors}</p>
                       <p className="text-sm leading-relaxed text-slate-700">{pub.summary}</p>
@@ -162,7 +162,7 @@ export default function HomePage() {
 
             <section id="internship">
               <h2
-                className="mb-4 text-2xl font-bold italic leading-none text-black"
+                className="mb-4 text-2xl font-bold italic leading-none text-[#2F1C0E]"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Internship
@@ -170,7 +170,7 @@ export default function HomePage() {
               <ul className="space-y-2 text-base text-slate-700">
                 {internships.map((item: ExperienceItem, idx: number) => (
                   <li key={idx}>
-                    <span className="font-medium text-slate-900">{item.title}</span>
+                    <span className="font-medium text-[#2F1C0E]">{item.title}</span>
                     {item.organization && <span className="text-slate-600"> · {item.organization}</span>}
                     {(item.period || item.year) && (
                       <span className="block text-sm text-slate-500">{item.period ?? item.year}</span>
@@ -182,7 +182,7 @@ export default function HomePage() {
 
             <section id="awards">
               <h2
-                className="mb-4 text-2xl font-bold italic leading-none text-black"
+                className="mb-4 text-2xl font-bold italic leading-none text-[#2F1C0E]"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Honors and Awards
@@ -190,7 +190,7 @@ export default function HomePage() {
               <ul className="space-y-2 text-base text-slate-700">
                 {awards.map((item: ExperienceItem, idx: number) => (
                   <li key={idx}>
-                    <span className="font-medium text-slate-900">{item.title}</span>
+                    <span className="font-medium text-[#2F1C0E]">{item.title}</span>
                     {item.organization && <span className="text-slate-600"> · {item.organization}</span>}
                   </li>
                 ))}

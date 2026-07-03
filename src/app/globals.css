@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fffefc;
   --foreground: #020617;
 }
 
@@ -20,4 +20,3 @@ body {
 a {
   @apply text-slate-900 underline-offset-4 decoration-slate-300 hover:underline hover:decoration-slate-500;
 }
-
