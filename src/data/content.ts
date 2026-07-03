@@ -61,10 +61,10 @@ export interface ExperienceItem {
 
 export const bio: Bio = {
   name: "Yutong Jiang",
-  title: "M.Eng. Candidate in AI and Data Visualization",
-  affiliation: "College of Design and Innovation, Tongji University",
+  title: "Master in AI and Data Visualization, Tongji University",
+  affiliation: "Bachelor in Digital Media and Communication Design, Tongji University",
   location: "Shanghai, China",
-  email: "2433545@tongji.edu.cn",
+  email: "jiangyytong@outlook.com",
   shortBio:
     "I am a human–computer interaction researcher focusing on interactive systems, creativity support tools, and AI-augmented interfaces. My work combines qualitative studies with prototype-driven experimentation.",
   researchInterestText:
@@ -75,7 +75,7 @@ export const bio: Bio = {
   social: [
     {
       label: "Email",
-      href: "mailto:2433545@tongji.edu.cn",
+      href: "mailto:jiangyytong@outlook.com",
       platform: "email",
     },
     {

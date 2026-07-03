@@ -34,11 +34,10 @@ export default function HomePage() {
               <p className="mt-5 text-2xl font-semibold tracking-tight text-slate-900">
                 {bio.name}
               </p>
-              {(bio.title || bio.affiliation) && (
-                <p className="mt-1 text-sm text-slate-500">
-                  {[bio.title, bio.affiliation].filter(Boolean).join(" · ")}
-                </p>
-              )}
+              <div className="mt-1 space-y-1 text-sm text-slate-500">
+                {bio.title && <p>{bio.title}</p>}
+                {bio.affiliation && <p>{bio.affiliation}</p>}
+              </div>
               <div className="mt-5 flex items-center gap-4">
                 {cvLink && (
                   <a
