@@ -12,15 +12,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-20 bg-[#FFFEFC] py-3">
-        <nav className="mx-auto flex max-w-[1680px] justify-end gap-5 px-4 text-sm font-medium text-[#2F1C0E] sm:gap-8 sm:px-6 lg:px-10 xl:px-16 2xl:px-[120px]">
+      <header className="sticky top-0 z-20 bg-[#FFFEFC] px-4 pt-7 sm:px-6 lg:px-10 xl:px-16 2xl:px-[120px]">
+        <nav className="mx-auto flex max-w-[1680px] justify-end gap-5 text-sm font-medium text-[#2F1C0E] sm:gap-8">
           <a href="#publications" className="hover:text-slate-900">Publication</a>
           <a href="#internship" className="hover:text-slate-900">Internship</a>
           <a href="#awards" className="hover:text-slate-900">Awards</a>
         </nav>
+        <div className="mx-auto mt-1 max-w-[1680px] border-t-2 border-[#2F1C0E]" aria-hidden="true" />
       </header>
 
-      <div className="mx-auto max-w-[1680px] px-4 py-8 sm:px-6 lg:px-10 lg:py-12 xl:px-16 2xl:px-[120px]">
+      <div className="mx-auto max-w-[1680px] px-4 pb-8 pt-12 sm:px-6 lg:px-10 lg:pb-12 lg:pt-16 xl:px-16 2xl:px-[120px]">
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-[240px_minmax(0,1fr)] xl:gap-12 2xl:grid-cols-[260px_minmax(0,1fr)] 2xl:gap-20">
           <aside className="grid gap-10 md:grid-cols-[220px_minmax(0,1fr)] xl:block xl:space-y-10">
             <div className="flex flex-col items-start">
