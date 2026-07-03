@@ -160,7 +160,7 @@ export const publications: Publication[] = [
       },
       {
         src: "/publications/bridge-2.png",
-        alt: "Additional interaction design image for the Bridging Visual Asymmetry project.",
+        alt: "A parent and child exploring a museum exhibit together during outdoor informal learning.",
       },
     ],
   },
@@ -241,16 +241,12 @@ export const publications: Publication[] = [
       "A visualization system using metaphor-driven layouts to explore scientific literature.",
     additionalImages: [
       {
-        src: "/publications/city-1.png",
-        alt: "Additional literature exploration view from the City of Wander project.",
-      },
-      {
         src: "/publications/city-2.png",
         alt: "Additional interface view from the City of Wander project.",
       },
       {
         src: "/publications/city-3.png",
-        alt: "Additional visual metaphor view from the City of Wander project.",
+        alt: "The City of Wander interface showing visual-encoding categories and a timeline for literature exploration.",
       },
     ],
   },
