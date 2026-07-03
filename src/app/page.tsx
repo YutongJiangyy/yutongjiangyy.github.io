@@ -3,11 +3,17 @@ import { ChevronDown } from "lucide-react";
 import { bio, news, researchInterestText, publications, internships, awards } from "@/data/content";
 import type { ExperienceItem } from "@/data/content";
 import { SocialIcon } from "@/components/social-icons";
+import { PublicationImageCarousel } from "@/components/publication-image-carousel";
 
 export default function HomePage() {
   const cvLink = bio.cvLinks[0];
   const emailLink = bio.social.find((l) => l.platform === "email");
   const scholarLink = bio.social.find((l) => l.platform === "google-scholar");
+  const publicationImages = publications.flatMap((publication) =>
+    publication.thumbnail
+      ? [{ src: publication.thumbnail, alt: publication.thumbnailAlt ?? publication.title }]
+      : [],
+  );
 
   return (
     <div className="min-h-screen">
@@ -112,27 +118,14 @@ export default function HomePage() {
                 {publications.map((pub) => (
                   <article
                     key={pub.title}
-                    className="grid w-full min-w-0 overflow-hidden rounded-lg border border-slate-100 bg-white md:grid-cols-[minmax(220px,36%)_minmax(0,1fr)]"
+                    className="group/publication grid w-full min-w-0 overflow-hidden rounded-lg border border-slate-100 bg-white md:grid-cols-[minmax(220px,36%)_minmax(0,1fr)]"
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
-                    <div className="relative aspect-[16/9] w-full min-w-0 overflow-hidden bg-slate-50 md:aspect-auto md:min-h-[200px]">
-                      <div className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)] -rotate-2">
-                        <span className="inline-flex rounded-full border-2 border-emerald-900 bg-[#D1FAE5] px-4 py-2 text-sm font-bold uppercase leading-none text-emerald-950">
-                          {pub.venue}
-                        </span>
-                      </div>
-                      {pub.thumbnail && (
-                        <div className="absolute inset-x-3 bottom-3 top-14">
-                          <Image
-                            src={pub.thumbnail}
-                            alt={pub.thumbnailAlt ?? pub.title}
-                            fill
-                            className="object-contain"
-                            unoptimized
-                          />
-                        </div>
-                      )}
-                    </div>
+                    <PublicationImageCarousel
+                      images={publicationImages}
+                      initialIndex={publicationImages.findIndex((image) => image.src === pub.thumbnail)}
+                      venue={pub.venue}
+                    />
                     <div className="min-w-0 space-y-2 px-5 py-5 sm:px-6 lg:px-8">
                       {pub.link ? (
                         <a
