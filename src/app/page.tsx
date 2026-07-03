@@ -110,12 +110,9 @@ export default function HomePage() {
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
                     <div className="relative aspect-[16/9] w-full min-w-0 overflow-hidden bg-slate-50 md:aspect-auto md:min-h-[200px]">
-                      <div className="absolute left-3 top-3 z-10 flex max-w-[calc(100%-1.5rem)] flex-wrap gap-2">
-                        <span className="rounded border border-emerald-200 bg-[#D1FAE5] px-2 py-1 text-xs font-medium leading-none text-emerald-950">
-                          {pub.badge ?? pub.venue}
-                        </span>
-                        <span className="rounded border border-emerald-200 bg-[#D1FAE5] px-2 py-1 text-xs font-medium leading-none text-emerald-950">
-                          {pub.year}
+                      <div className="absolute left-3 top-3 z-10 max-w-[calc(100%-1.5rem)]">
+                        <span className="inline-flex rounded-full border border-emerald-200 bg-[#D1FAE5] px-3 py-1.5 text-sm font-medium leading-none text-emerald-950">
+                          {pub.venue}
                         </span>
                       </div>
                       {pub.thumbnail && (
