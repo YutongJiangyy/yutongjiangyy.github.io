@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import { bio, news, researchInterestText, publications, internships, awards } from "@/data/content";
 import type { ExperienceItem } from "@/data/content";
 import { SocialIcon } from "@/components/social-icons";
@@ -109,14 +110,24 @@ export default function HomePage() {
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
                     <div className="relative aspect-[16/9] w-full min-w-0 overflow-hidden bg-slate-50 md:aspect-auto md:min-h-[200px]">
+                      <div className="absolute left-3 top-3 z-10 flex max-w-[calc(100%-1.5rem)] flex-wrap gap-2">
+                        <span className="rounded border border-emerald-200 bg-[#D1FAE5] px-2 py-1 text-xs font-medium leading-none text-emerald-950">
+                          {pub.badge ?? pub.venue}
+                        </span>
+                        <span className="rounded border border-emerald-200 bg-[#D1FAE5] px-2 py-1 text-xs font-medium leading-none text-emerald-950">
+                          {pub.year}
+                        </span>
+                      </div>
                       {pub.thumbnail && (
-                        <Image
-                          src={pub.thumbnail}
-                          alt={pub.thumbnailAlt ?? pub.title}
-                          fill
-                          className="object-contain p-3"
-                          unoptimized
-                        />
+                        <div className="absolute inset-x-3 bottom-3 top-12">
+                          <Image
+                            src={pub.thumbnail}
+                            alt={pub.thumbnailAlt ?? pub.title}
+                            fill
+                            className="object-contain"
+                            unoptimized
+                          />
+                        </div>
                       )}
                     </div>
                     <div className="min-w-0 space-y-2 px-5 py-5 sm:px-6 lg:px-8">
@@ -132,8 +143,21 @@ export default function HomePage() {
                       ) : (
                         <p className="text-base font-semibold leading-relaxed text-slate-900">{pub.title}</p>
                       )}
-                      <p className="text-sm leading-relaxed text-slate-600">{pub.venue}</p>
                       <p className="text-sm leading-relaxed text-slate-500">{pub.authors}</p>
+                      <p className="text-sm leading-relaxed text-slate-700">{pub.summary}</p>
+                      <details className="group pt-1">
+                        <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 [&::-webkit-details-marker]:hidden">
+                          <ChevronDown
+                            aria-hidden="true"
+                            className="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                          />
+                          <span className="group-open:hidden">More details</span>
+                          <span className="hidden group-open:inline">Less details</span>
+                        </summary>
+                        <p className="mt-3 border-l-2 border-[#D1FAE5] pl-3 text-sm leading-relaxed text-slate-600">
+                          {pub.description}
+                        </p>
+                      </details>
                     </div>
                   </article>
                 ))}

@@ -43,6 +43,8 @@ export interface Publication {
   authors: string;
   venue: string;
   year: string;
+  summary: string;
+  description: string;
   thumbnailAlt?: string;
   link?: string;
   thumbnail?: string;
@@ -143,7 +145,11 @@ export const publications: Publication[] = [
       "Yutong Jiang, Zixuan Zhang, Jiaying Xu, Qingyun Zheng, Qian Guo, Qinyang Wang, Qi Wang, Guanhong Liu",
     venue: "CHI 2026",
     year: "2026",
-    badge: "CHI 2026",
+    summary:
+      "An AI-mediated system that supports shared attention and communication during outdoor learning.",
+    description:
+      "This work investigates how parents with visual impairments and their sighted children coordinate attention, questions, and learning in outdoor settings. It translates these needs into an AI-mediated design that helps families share observations while preserving the parent's role in guiding the experience.",
+    badge: "CHI",
     link: "https://doi.org/10.1145/3772318.3790604",
     thumbnail: "/publications/chi26_1.jpg",
     thumbnailAlt:
@@ -156,7 +162,11 @@ export const publications: Publication[] = [
       "Shuning Zhang*, Yutong Jiang*, Rongjun Ma, Yuting Yang, Mingyao Xu, Zhixin Huang, Xin Yi, Hewu Li (*equal contribution)",
     venue: "CHI 2026",
     year: "2026",
-    badge: "CHI 2026",
+    summary:
+      "A content-aware privacy layer that protects sensitive information during web-agent use.",
+    description:
+      "PrivWeb identifies sensitive content as web agents browse and act on a user's behalf, then provides context-aware protection at the moment it is needed. The design aims to reduce unnecessary interruption while giving users clearer control over what an agent can access or disclose.",
+    badge: "CHI",
     link: "https://doi.org/10.1145/3772318.3790919",
     thumbnail: "/publications/chi26_2.jpg",
     thumbnailAlt:
@@ -168,7 +178,11 @@ export const publications: Publication[] = [
     authors: "Yutong Jiang, Xiaoke Yan, Chuyi Zheng, Yang Shi, Qing Chen, Nan Cao",
     venue: "SIGGRAPH Asia Posters 2025",
     year: "2025",
-    badge: "SIGGRAPH Asia Posters 2025",
+    summary:
+      "An affective visualization that makes subway-harassment experiences visible and supports empowerment.",
+    description:
+      "This project explores how visual storytelling can communicate the emotional weight of subway harassment without reducing lived experiences to statistics. Its star-based visual language brings individual accounts together to support reflection, awareness, and solidarity.",
+    badge: "SIGGRAPH Asia Posters",
     link: "https://doi.org/10.1145/3757374.3771477",
     thumbnail: "/publications/siggraph25.png",
     thumbnailAlt:
@@ -181,7 +195,11 @@ export const publications: Publication[] = [
       "Yutong Jiang*, Qingyun Zheng*, Zixuan Zhang*, Qian Guo*, Jiaying Xu*, Shuchang Xu, Guanhong Liu (*equal contribution)",
     venue: "CSCW Companion 2025",
     year: "2025",
-    badge: "CSCW Companion 2025",
+    summary:
+      "A study of the communication barriers families encounter during outdoor informal learning.",
+    description:
+      "The study examines how parents with visual impairments and their sighted children establish shared attention and exchange contextual information outdoors. It identifies recurring coordination challenges and offers design strategies for more inclusive family learning technologies.",
+    badge: "CSCW Companion",
     link: "https://doi.org/10.1145/3715070.3749238",
     thumbnail: "/publications/cscw25.jpg",
     thumbnailAlt:
@@ -193,7 +211,11 @@ export const publications: Publication[] = [
     authors: "Guanhong Liu, Yutong Jiang, Xiaoke Yan, Nan Cao, Yang Shi",
     venue: "CHI EA 2025",
     year: "2025",
-    badge: "CHI EA 2025",
+    summary:
+      "A visual-metaphor system that turns literature exploration into navigation through a knowledge city.",
+    description:
+      "City of Wander maps scholarly relationships into an explorable city-like environment. By combining spatial organization with familiar visual metaphors, it helps readers discover research areas, trace connections, and move between overview and detail.",
+    badge: "CHI EA",
     link: "https://doi.org/10.1145/3706599.3720280",
     thumbnail: "/publications/chiea25.png",
     thumbnailAlt:
