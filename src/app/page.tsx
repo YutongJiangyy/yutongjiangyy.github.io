@@ -91,7 +91,7 @@ export default function HomePage() {
           <div className="w-full min-w-0 space-y-14">
             <section>
               <h2
-                className="mb-4 text-base font-bold italic text-black"
+                className="mb-4 text-2xl font-bold italic leading-none text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Research Interest
@@ -103,7 +103,7 @@ export default function HomePage() {
 
             <section id="publications">
               <h2
-                className="mb-5 text-base font-bold italic text-black"
+                className="mb-5 text-2xl font-bold italic leading-none text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Publication
@@ -116,13 +116,13 @@ export default function HomePage() {
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
                     <div className="relative aspect-[16/9] w-full min-w-0 overflow-hidden bg-slate-50 md:aspect-auto md:min-h-[200px]">
-                      <div className="absolute left-3 top-3 z-10 max-w-[calc(100%-1.5rem)]">
-                        <span className="inline-flex rounded-full border border-emerald-200 bg-[#D1FAE5] px-3 py-1.5 text-sm font-medium leading-none text-emerald-950">
+                      <div className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)] -rotate-2">
+                        <span className="inline-flex rounded-full border-2 border-emerald-900 bg-[#D1FAE5] px-4 py-2 text-sm font-bold uppercase leading-none text-emerald-950">
                           {pub.venue}
                         </span>
                       </div>
                       {pub.thumbnail && (
-                        <div className="absolute inset-x-3 bottom-3 top-12">
+                        <div className="absolute inset-x-3 bottom-3 top-14">
                           <Image
                             src={pub.thumbnail}
                             alt={pub.thumbnailAlt ?? pub.title}
@@ -169,7 +169,7 @@ export default function HomePage() {
 
             <section id="internship">
               <h2
-                className="mb-4 text-base font-bold italic text-black"
+                className="mb-4 text-2xl font-bold italic leading-none text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Internship
@@ -189,7 +189,7 @@ export default function HomePage() {
 
             <section id="awards">
               <h2
-                className="mb-4 text-base font-bold italic text-black"
+                className="mb-4 text-2xl font-bold italic leading-none text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Honors and Awards
