@@ -133,12 +133,18 @@ export default function HomePage() {
                           href={pub.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="block break-words text-base font-semibold leading-relaxed text-slate-900 hover:underline"
+                          className="block break-words text-base font-bold italic leading-relaxed text-slate-900 hover:underline"
+                          style={{ fontFamily: '"Times New Roman", Times, serif' }}
                         >
                           {pub.title}
                         </a>
                       ) : (
-                        <p className="text-base font-semibold leading-relaxed text-slate-900">{pub.title}</p>
+                        <p
+                          className="text-base font-bold italic leading-relaxed text-slate-900"
+                          style={{ fontFamily: '"Times New Roman", Times, serif' }}
+                        >
+                          {pub.title}
+                        </p>
                       )}
                       <p className="text-sm leading-relaxed text-slate-500">{pub.authors}</p>
                       <p className="text-sm leading-relaxed text-slate-700">{pub.summary}</p>
