@@ -90,7 +90,10 @@ export default function HomePage() {
 
           <div className="w-full min-w-0 space-y-14">
             <section>
-              <h2 className="mb-4 text-base font-semibold uppercase tracking-wider text-black">
+              <h2
+                className="mb-4 text-base font-bold italic uppercase tracking-wider text-black"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              >
                 Research Interest
               </h2>
               <div className="text-base leading-relaxed text-slate-700">
@@ -99,7 +102,10 @@ export default function HomePage() {
             </section>
 
             <section id="publications">
-              <h2 className="mb-5 text-base font-semibold uppercase tracking-wider text-black">
+              <h2
+                className="mb-5 text-base font-bold italic uppercase tracking-wider text-black"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              >
                 Publication
               </h2>
               <div className="space-y-6">
@@ -133,18 +139,12 @@ export default function HomePage() {
                           href={pub.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="block break-words text-base font-bold italic leading-relaxed text-slate-900 hover:underline"
-                          style={{ fontFamily: '"Times New Roman", Times, serif' }}
+                          className="block break-words text-base font-semibold leading-relaxed text-slate-900 hover:underline"
                         >
                           {pub.title}
                         </a>
                       ) : (
-                        <p
-                          className="text-base font-bold italic leading-relaxed text-slate-900"
-                          style={{ fontFamily: '"Times New Roman", Times, serif' }}
-                        >
-                          {pub.title}
-                        </p>
+                        <p className="text-base font-semibold leading-relaxed text-slate-900">{pub.title}</p>
                       )}
                       <p className="text-sm leading-relaxed text-slate-500">{pub.authors}</p>
                       <p className="text-sm leading-relaxed text-slate-700">{pub.summary}</p>
@@ -168,7 +168,10 @@ export default function HomePage() {
             </section>
 
             <section id="internship">
-              <h2 className="mb-4 text-base font-semibold uppercase tracking-wider text-black">
+              <h2
+                className="mb-4 text-base font-bold italic uppercase tracking-wider text-black"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              >
                 Internship
               </h2>
               <ul className="space-y-2 text-base text-slate-700">
@@ -185,7 +188,10 @@ export default function HomePage() {
             </section>
 
             <section id="awards">
-              <h2 className="mb-4 text-base font-semibold uppercase tracking-wider text-black">
+              <h2
+                className="mb-4 text-base font-bold italic uppercase tracking-wider text-black"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              >
                 Honors and Awards
               </h2>
               <ul className="space-y-2 text-base text-slate-700">
