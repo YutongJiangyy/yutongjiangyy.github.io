@@ -48,6 +48,7 @@ export interface Publication {
   thumbnailAlt?: string;
   link?: string;
   thumbnail?: string;
+  additionalImages?: { src: string; alt: string }[];
 }
 
 export interface ExperienceItem {
@@ -152,6 +153,16 @@ export const publications: Publication[] = [
     thumbnail: "/publications/chi26_1.jpg",
     thumbnailAlt:
       "A distributed AI system supporting joint attention and communication between visually impaired parents and sighted children during outdoor informal learning.",
+    additionalImages: [
+      {
+        src: "/publications/bridge-1.png",
+        alt: "Additional system design image for the Bridging Visual Asymmetry project.",
+      },
+      {
+        src: "/publications/bridge-2.png",
+        alt: "Additional interaction design image for the Bridging Visual Asymmetry project.",
+      },
+    ],
   },
   {
     title:
@@ -183,6 +194,20 @@ export const publications: Publication[] = [
     thumbnail: "/publications/siggraph25.png",
     thumbnailAlt:
       "An affective visualization system highlighting emotional experiences of subway harassment victims.",
+    additionalImages: [
+      {
+        src: "/publications/stars-1.png",
+        alt: "Additional project image for When Stars Shine through Silence.",
+      },
+      {
+        src: "/publications/stars-2.png",
+        alt: "Additional interface image for When Stars Shine through Silence.",
+      },
+      {
+        src: "/publications/stars-3.png",
+        alt: "Visual encoding details for When Stars Shine through Silence.",
+      },
+    ],
   },
   {
     title:
@@ -214,6 +239,20 @@ export const publications: Publication[] = [
     thumbnail: "/publications/chiea25.png",
     thumbnailAlt:
       "A visualization system using metaphor-driven layouts to explore scientific literature.",
+    additionalImages: [
+      {
+        src: "/publications/city-1.png",
+        alt: "Additional literature exploration view from the City of Wander project.",
+      },
+      {
+        src: "/publications/city-2.png",
+        alt: "Additional interface view from the City of Wander project.",
+      },
+      {
+        src: "/publications/city-3.png",
+        alt: "Additional visual metaphor view from the City of Wander project.",
+      },
+    ],
   },
 ];
 

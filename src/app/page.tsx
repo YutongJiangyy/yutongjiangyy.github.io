@@ -9,11 +9,6 @@ export default function HomePage() {
   const cvLink = bio.cvLinks[0];
   const emailLink = bio.social.find((l) => l.platform === "email");
   const scholarLink = bio.social.find((l) => l.platform === "google-scholar");
-  const publicationImages = publications.flatMap((publication) =>
-    publication.thumbnail
-      ? [{ src: publication.thumbnail, alt: publication.thumbnailAlt ?? publication.title }]
-      : [],
-  );
 
   return (
     <div className="min-h-screen">
@@ -122,8 +117,13 @@ export default function HomePage() {
                     style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
                   >
                     <PublicationImageCarousel
-                      images={publicationImages}
-                      initialIndex={publicationImages.findIndex((image) => image.src === pub.thumbnail)}
+                      images={[
+                        ...(pub.thumbnail
+                          ? [{ src: pub.thumbnail, alt: pub.thumbnailAlt ?? pub.title }]
+                          : []),
+                        ...(pub.additionalImages ?? []),
+                      ]}
+                      initialIndex={0}
                       venue={pub.venue}
                     />
                     <div className="min-w-0 space-y-2 px-5 py-5 sm:px-6 lg:px-8">
