@@ -91,7 +91,7 @@ export default function HomePage() {
           <div className="w-full min-w-0 space-y-14">
             <section>
               <h2
-                className="mb-4 text-base font-bold italic uppercase tracking-wider text-black"
+                className="mb-4 text-base font-bold italic text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Research Interest
@@ -103,7 +103,7 @@ export default function HomePage() {
 
             <section id="publications">
               <h2
-                className="mb-5 text-base font-bold italic uppercase tracking-wider text-black"
+                className="mb-5 text-base font-bold italic text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Publication
@@ -169,7 +169,7 @@ export default function HomePage() {
 
             <section id="internship">
               <h2
-                className="mb-4 text-base font-bold italic uppercase tracking-wider text-black"
+                className="mb-4 text-base font-bold italic text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Internship
@@ -189,7 +189,7 @@ export default function HomePage() {
 
             <section id="awards">
               <h2
-                className="mb-4 text-base font-bold italic uppercase tracking-wider text-black"
+                className="mb-4 text-base font-bold italic text-black"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Honors and Awards
