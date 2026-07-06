@@ -12,13 +12,13 @@ interface CarouselImage {
 interface PublicationImageCarouselProps {
   images: CarouselImage[];
   initialIndex: number;
-  venue: string;
+  className?: string;
 }
 
 export function PublicationImageCarousel({
   images,
   initialIndex,
-  venue,
+  className = "",
 }: PublicationImageCarouselProps) {
   const safeInitialIndex = images.length > 0 && initialIndex >= 0 ? initialIndex % images.length : 0;
   const [activeIndex, setActiveIndex] = useState(safeInitialIndex);
@@ -33,25 +33,24 @@ export function PublicationImageCarousel({
   };
 
   return (
-    <div className="relative aspect-[16/9] w-full min-w-0 overflow-hidden bg-slate-50 md:aspect-auto md:min-h-[200px]">
-      <div className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)]">
-        <span className="inline-flex rounded-full border-2 border-emerald-900 bg-[#D1FAE5] px-4 py-2 text-sm font-bold uppercase leading-none text-emerald-950">
-          {venue}
-        </span>
-      </div>
-
+    <div className={`relative aspect-[4/3] min-w-0 self-start overflow-hidden rounded-[28px] border border-neutral-200 bg-white ${className}`}>
       {activeImage && (
-        <div className="absolute inset-x-3 bottom-3 top-14">
-          <Image
-            key={activeImage.src}
-            src={activeImage.src}
-            alt={activeImage.alt}
-            fill
-            className="object-contain"
-            unoptimized
-          />
-        </div>
+        <Image
+          key={activeImage.src}
+          src={activeImage.src}
+          alt={activeImage.alt}
+          fill
+          className="object-cover"
+          sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
+          unoptimized
+        />
       )}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[5] rounded-[27px]"
+        style={{ boxShadow: "inset 0 0 32px 18px rgba(255, 255, 255, 0.72)" }}
+      />
 
       {images.length > 1 && (
         <>
@@ -60,19 +59,22 @@ export function PublicationImageCarousel({
             onClick={showPrevious}
             aria-label="Previous publication image"
             title="Previous image"
-            className="absolute left-3 top-1/2 z-20 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-slate-200 bg-white/95 text-slate-700 opacity-100 shadow-sm transition hover:bg-white hover:text-slate-950 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 md:opacity-0 md:group-hover/publication:opacity-100"
+            className="absolute left-3 top-1/2 z-10 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-neutral-300 bg-white/95 text-neutral-600 opacity-100 transition hover:border-neutral-900 hover:text-neutral-950 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 xl:opacity-0 xl:group-hover/publication:opacity-100"
           >
-            <ChevronLeft aria-hidden="true" className="h-5 w-5" />
+            <ChevronLeft aria-hidden="true" className="h-4 w-4" />
           </button>
           <button
             type="button"
             onClick={showNext}
             aria-label="Next publication image"
             title="Next image"
-            className="absolute right-3 top-1/2 z-20 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-slate-200 bg-white/95 text-slate-700 opacity-100 shadow-sm transition hover:bg-white hover:text-slate-950 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 md:opacity-0 md:group-hover/publication:opacity-100"
+            className="absolute right-3 top-1/2 z-10 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-neutral-300 bg-white/95 text-neutral-600 opacity-100 transition hover:border-neutral-900 hover:text-neutral-950 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 xl:opacity-0 xl:group-hover/publication:opacity-100"
           >
-            <ChevronRight aria-hidden="true" className="h-5 w-5" />
+            <ChevronRight aria-hidden="true" className="h-4 w-4" />
           </button>
+          <div className="absolute bottom-3 right-3 z-10 rounded-full bg-white/90 px-2 py-1 text-[10px] tabular-nums text-neutral-500">
+            {activeIndex + 1} / {images.length}
+          </div>
         </>
       )}
     </div>

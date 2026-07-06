@@ -1,205 +1,201 @@
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
-import { bio, news, researchInterestText, publications, internships, awards } from "@/data/content";
+import { ArrowUpRight, FileText } from "lucide-react";
+import { awards, bio, internships, news, publications, researchInterestText } from "@/data/content";
 import type { ExperienceItem } from "@/data/content";
-import { SocialIcon } from "@/components/social-icons";
 import { PublicationImageCarousel } from "@/components/publication-image-carousel";
+import { PublicationOverview } from "@/components/publication-overview";
+import { SocialIcon } from "@/components/social-icons";
+
+const sectionTitleClass = "text-xs font-semibold uppercase text-neutral-500";
 
 export default function HomePage() {
   const cvLink = bio.cvLinks[0];
-  const emailLink = bio.social.find((l) => l.platform === "email");
-  const scholarLink = bio.social.find((l) => l.platform === "google-scholar");
 
   return (
-    <div className="min-h-screen">
-      <header className="sticky top-0 z-20 bg-[#FFFEFC] px-4 pt-7 sm:px-6 lg:px-10 xl:px-16 2xl:px-[120px]">
-        <nav className="mx-auto flex max-w-[1680px] justify-end gap-5 text-sm font-medium text-[#2F1C0E] sm:gap-8">
-          <a href="#publications" className="hover:text-slate-900">Publication</a>
-          <a href="#internship" className="hover:text-slate-900">Internship</a>
-          <a href="#awards" className="hover:text-slate-900">Awards</a>
-        </nav>
-        <div className="mx-auto mt-1 max-w-[1680px] border-t-2 border-[#2F1C0E]" aria-hidden="true" />
-      </header>
+    <main className="mx-auto min-h-screen max-w-[1376px] px-8 pb-20 pt-16 sm:px-12">
+      <nav className="sticky top-0 z-30 flex items-center justify-end gap-5 border-b border-neutral-300 bg-white/95 py-3 text-xs text-neutral-600 backdrop-blur-sm sm:gap-8 sm:text-sm">
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <a href="#internship">Internship</a>
+      </nav>
 
-      <div className="mx-auto max-w-[1680px] px-4 pb-8 pt-12 sm:px-6 lg:px-10 lg:pb-12 lg:pt-16 xl:px-16 2xl:px-[120px]">
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-[240px_minmax(0,1fr)] xl:gap-12 2xl:grid-cols-[260px_minmax(0,1fr)] 2xl:gap-20">
-          <aside className="grid gap-10 md:grid-cols-[220px_minmax(0,1fr)] xl:block xl:space-y-10">
-            <div className="flex flex-col items-start">
-              <div className="relative aspect-square w-[160px] overflow-hidden rounded-full bg-slate-200">
-                <Image
-                  src="/publications/avatar.jpg"
-                  alt={bio.name}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-              </div>
-              <p className="mt-5 text-2xl font-semibold tracking-tight text-[#2F1C0E]">
-                {bio.name}
-              </p>
-              <div className="mt-1 space-y-1 text-sm text-slate-500">
-                {bio.title && <p>{bio.title}</p>}
-                {bio.affiliation && <p>{bio.affiliation}</p>}
-              </div>
-              <div className="mt-5 flex items-center gap-4">
-                {cvLink && (
-                  <a
-                    href={cvLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm font-medium text-slate-700 hover:text-slate-900"
-                  >
-                    CV
-                  </a>
-                )}
-                {emailLink && (
-                  <a
-                    href={emailLink.href}
-                    className="text-slate-500 hover:text-slate-900"
-                    aria-label="Email"
-                  >
-                    <SocialIcon platform="email" className="h-5 w-5" />
-                  </a>
-                )}
-                {scholarLink && (
-                  <a
-                    href={scholarLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-slate-500 hover:text-slate-900"
-                    aria-label="Google Scholar"
-                  >
-                    <SocialIcon platform="google-scholar" className="h-5 w-5" />
-                  </a>
-                )}
-              </div>
+      <div className="mt-12 grid items-start gap-14 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-20">
+        <aside className="font-light lg:sticky lg:top-24">
+          <div className="flex items-start gap-5 lg:block">
+            <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-full bg-neutral-100 lg:mb-7 lg:w-32">
+              <Image
+                src="/publications/avatar.jpg"
+                alt={bio.name}
+                fill
+                className="object-cover"
+                priority
+                unoptimized
+              />
             </div>
+            <div>
+              <h1 className="text-[30px] font-light leading-none text-neutral-950">
+                {bio.name}
+              </h1>
+              <dl className="mt-6 max-w-[300px] space-y-5 text-sm leading-relaxed">
+                <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
+                  <dt className="pt-0.5 text-[11px] font-medium uppercase text-neutral-400">Master</dt>
+                  <dd>
+                    <p className="text-neutral-700">AI and Data Visualization</p>
+                    <p className="mt-0.5 text-neutral-400">Tongji University</p>
+                  </dd>
+                </div>
+                <div className="grid grid-cols-[64px_minmax(0,1fr)] gap-3">
+                  <dt className="pt-0.5 text-[11px] font-medium uppercase text-neutral-400">Bachelor</dt>
+                  <dd>
+                    <p className="text-neutral-700">Digital Media and Communication Design</p>
+                    <p className="mt-0.5 text-neutral-400">Tongji University</p>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
 
-            <section id="news">
-              <h2 className="mb-4 text-base font-semibold uppercase tracking-wider text-[#2F1C0E]">
-                News
-              </h2>
-              <div className="space-y-5">
-                {news.map((item, idx) => (
-                  <div key={idx} className="text-sm">
-                    <p className="text-slate-500">{item.date}</p>
-                    <p className="mt-1 text-slate-800">{item.title}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </aside>
-
-          <div className="w-full min-w-0 space-y-14">
-            <section>
-              <h2
-                className="mb-4 text-2xl font-bold italic leading-none text-[#2F1C0E]"
-                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          <div className="mt-7 flex flex-wrap gap-x-4 gap-y-3 text-sm text-neutral-800">
+            {bio.social.filter((link) => link.platform !== "github").map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.platform === "email" ? undefined : "_blank"}
+                rel={link.platform === "email" ? undefined : "noreferrer"}
+                className="inline-flex items-center gap-1.5"
               >
-                Research Interest
-              </h2>
-              <div className="text-base leading-relaxed text-slate-700">
-                {researchInterestText}
-              </div>
-            </section>
-
-            <section id="publications">
-              <h2
-                className="mb-5 text-2xl font-bold italic leading-none text-[#2F1C0E]"
-                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+                <SocialIcon platform={link.platform} className="h-4 w-4" />
+                {link.label}
+              </a>
+            ))}
+            {cvLink && (
+              <a
+                href={cvLink.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5"
               >
-                Publication
-              </h2>
-              <div className="space-y-6">
-                {publications.map((pub) => (
-                  <article
-                    key={pub.title}
-                    className="group/publication grid w-full min-w-0 overflow-hidden rounded-lg border border-slate-100 bg-white md:grid-cols-[minmax(220px,36%)_minmax(0,1fr)]"
-                    style={{ boxShadow: "1px 1px 43.3px -1px rgba(0,0,0,0.05)" }}
-                  >
-                    <PublicationImageCarousel
-                      images={[
-                        ...(pub.thumbnail
-                          ? [{ src: pub.thumbnail, alt: pub.thumbnailAlt ?? pub.title }]
-                          : []),
-                        ...(pub.additionalImages ?? []),
-                      ]}
-                      initialIndex={0}
-                      venue={pub.venue}
-                    />
-                    <div className="min-w-0 space-y-2 px-5 py-5 sm:px-6 lg:px-8">
-                      {pub.link ? (
+                <FileText aria-hidden="true" className="h-4 w-4" />
+                CV
+              </a>
+            )}
+          </div>
+
+          <section id="news" className="mt-14">
+            <h2 className={sectionTitleClass}>News</h2>
+            <div className="mt-5 space-y-5">
+              {news.map((item) => (
+                <article key={`${item.date}-${item.title}`} className="text-sm leading-relaxed">
+                  <time className="text-xs text-neutral-400">{item.date}</time>
+                  <p className="mt-1 text-neutral-700">{item.title}</p>
+                  {item.text && <p className="mt-1 text-neutral-500">{item.text}</p>}
+                </article>
+              ))}
+            </div>
+          </section>
+        </aside>
+
+        <div className="min-w-0">
+          <section className="grid gap-5 pb-14 md:grid-cols-[minmax(180px,0.8fr)_minmax(0,1.2fr)] md:gap-10 xl:gap-16">
+            <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
+            <p className="max-w-2xl text-sm leading-7 text-neutral-600 sm:text-base">
+              {researchInterestText}
+            </p>
+          </section>
+
+          <section id="publications" className="scroll-mt-20 pt-12">
+            <h2 className="mb-12 text-2xl font-light text-neutral-950">Publication</h2>
+
+            <div className="space-y-24 lg:space-y-28">
+              {publications.map((pub) => (
+                <article
+                  key={pub.title}
+                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-16"
+                >
+                  <div className="min-w-0">
+                    <h3 className="max-w-3xl break-words text-xl font-normal leading-[1.5] text-neutral-950">
+                      {pub.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-6 text-neutral-400">
+                      {renderAuthors(pub.authors)}
+                    </p>
+                    <p className="mt-5 max-w-2xl text-sm leading-6 text-neutral-600">{pub.summary}</p>
+
+                    <div className="mt-6 grid grid-cols-[max-content_minmax(0,1fr)] items-start gap-x-2 gap-y-4">
+                      {pub.link && (
                         <a
                           href={pub.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="block break-words text-base font-semibold leading-relaxed text-[#2F1C0E] hover:underline"
+                          className="inline-flex h-8 items-center gap-1.5 rounded-full border border-neutral-300 px-3 text-xs font-bold text-neutral-800 no-underline transition-colors hover:border-neutral-950 hover:bg-neutral-950 hover:text-white hover:no-underline"
                         >
-                          {pub.title}
+                          {pub.venue}
+                          <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
                         </a>
-                      ) : (
-                        <p className="text-base font-semibold leading-relaxed text-[#2F1C0E]">{pub.title}</p>
                       )}
-                      <p className="text-sm leading-relaxed text-slate-500">{pub.authors}</p>
-                      <p className="text-sm leading-relaxed text-slate-700">{pub.summary}</p>
-                      <details className="group pt-1">
-                        <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 [&::-webkit-details-marker]:hidden">
-                          <ChevronDown
-                            aria-hidden="true"
-                            className="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
-                          />
-                          <span className="group-open:hidden">More details</span>
-                          <span className="hidden group-open:inline">Less details</span>
-                        </summary>
-                        <p className="mt-3 border-l-2 border-[#D1FAE5] pl-3 text-sm leading-relaxed text-slate-600">
-                          {pub.description}
-                        </p>
-                      </details>
+                      <PublicationOverview description={pub.description} />
                     </div>
-                  </article>
-                ))}
-              </div>
-            </section>
+                  </div>
 
-            <section id="internship">
-              <h2
-                className="mb-4 text-2xl font-bold italic leading-none text-[#2F1C0E]"
-                style={{ fontFamily: '"Times New Roman", Times, serif' }}
-              >
-                Internship
-              </h2>
-              <ul className="space-y-2 text-base text-slate-700">
-                {internships.map((item: ExperienceItem, idx: number) => (
-                  <li key={idx}>
-                    <span className="font-medium text-[#2F1C0E]">{item.title}</span>
-                    {item.organization && <span className="text-slate-600"> · {item.organization}</span>}
-                    {(item.period || item.year) && (
-                      <span className="block text-sm text-slate-500">{item.period ?? item.year}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </section>
+                  <PublicationImageCarousel
+                    images={[
+                      ...(pub.thumbnail
+                        ? [{ src: pub.thumbnail, alt: pub.thumbnailAlt ?? pub.title }]
+                        : []),
+                      ...(pub.additionalImages ?? []),
+                    ]}
+                    initialIndex={0}
+                  />
+                </article>
+              ))}
+            </div>
+          </section>
 
-            <section id="awards">
-              <h2
-                className="mb-4 text-2xl font-bold italic leading-none text-[#2F1C0E]"
-                style={{ fontFamily: '"Times New Roman", Times, serif' }}
-              >
-                Honors and Awards
-              </h2>
-              <ul className="space-y-2 text-base text-slate-700">
-                {awards.map((item: ExperienceItem, idx: number) => (
-                  <li key={idx}>
-                    <span className="font-medium text-[#2F1C0E]">{item.title}</span>
-                    {item.organization && <span className="text-slate-600"> · {item.organization}</span>}
-                  </li>
-                ))}
-              </ul>
-            </section>
+          <div className="mt-28 grid gap-20 xl:grid-cols-2 xl:gap-24">
+            <ExperienceSection id="awards" title="Awards" items={awards} />
+            <ExperienceSection id="internship" title="Internship" items={internships} />
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
+}
+
+function ExperienceSection({
+  id,
+  title,
+  items,
+}: {
+  id: string;
+  title: string;
+  items: ExperienceItem[];
+}) {
+  return (
+    <section id={id} className="scroll-mt-20">
+      <h2 className="text-2xl font-light text-neutral-950">{title}</h2>
+      <ul className="mt-8 divide-y divide-neutral-200">
+        {items.map((item) => (
+          <li key={`${item.title}-${item.organization}`} className="grid gap-2 py-6 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-5">
+            <div>
+              <p className="text-sm font-medium text-neutral-900">{item.title}</p>
+              <p className="mt-1 text-sm text-neutral-500">{item.organization}</p>
+              {item.description && <p className="mt-2 text-sm leading-6 text-neutral-500">{item.description}</p>}
+            </div>
+            <p className="text-xs text-neutral-400 sm:text-right">{item.period ?? item.year}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function renderAuthors(authors: string) {
+  return authors.split("Yutong Jiang").map((part, index, parts) => (
+    <span key={`${part}-${index}`}>
+      {part}
+      {index < parts.length - 1 && (
+        <span className="font-normal text-neutral-600">Yutong Jiang</span>
+      )}
+    </span>
+  ));
 }
