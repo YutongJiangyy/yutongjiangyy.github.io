@@ -150,13 +150,17 @@ export const publications: Publication[] = [
     description:
       "This work investigates how parents with visual impairments and their sighted children coordinate attention, questions, and learning in outdoor settings. It translates these needs into an AI-mediated design that helps families share observations while preserving the parent's role in guiding the experience.",
     link: "https://doi.org/10.1145/3772318.3790604",
-    thumbnail: "/publications/chi26_1.jpg",
+    thumbnail: "/publications/bridge-web-1.png",
     thumbnailAlt:
-      "A distributed AI system supporting joint attention and communication between visually impaired parents and sighted children during outdoor informal learning.",
+      "The Bond system workflow supporting interest detection and prompt generation between visually impaired parents and sighted children.",
     additionalImages: [
       {
-        src: "/publications/bridge-1.png",
-        alt: "Additional system design image for the Bridging Visual Asymmetry project.",
+        src: "/publications/bridge-web-2.png",
+        alt: "A three-phase empirical study process covering needs grounding, design refinement, and field deployment.",
+      },
+      {
+        src: "/publications/bridge-web-3.png",
+        alt: "The conceptual framing of symbiotic learning and AI-mediated shifts toward balanced parent-child interaction.",
       },
       {
         src: "/publications/bridge-2.png",
