@@ -22,7 +22,6 @@ export function PublicationImageCarousel({
 }: PublicationImageCarouselProps) {
   const safeInitialIndex = images.length > 0 && initialIndex >= 0 ? initialIndex % images.length : 0;
   const [activeIndex, setActiveIndex] = useState(safeInitialIndex);
-  const activeImage = images[activeIndex];
 
   const showPrevious = () => {
     setActiveIndex((current) => (current - 1 + images.length) % images.length);
@@ -34,17 +33,21 @@ export function PublicationImageCarousel({
 
   return (
     <div className={`relative aspect-[4/3] min-w-0 self-start overflow-hidden rounded-[28px] border border-neutral-200 bg-white ${className}`}>
-      {activeImage && (
+      {images.map((image, index) => (
         <Image
-          key={activeImage.src}
-          src={activeImage.src}
-          alt={activeImage.alt}
+          key={image.src}
+          src={image.src}
+          alt={index === activeIndex ? image.alt : ""}
+          aria-hidden={index !== activeIndex}
           fill
-          className="object-cover"
+          loading="eager"
+          className={`object-cover transition-opacity duration-150 ${
+            index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
           sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
           unoptimized
         />
-      )}
+      ))}
 
       <div
         aria-hidden="true"
