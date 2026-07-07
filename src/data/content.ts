@@ -225,9 +225,9 @@ export const publications: Publication[] = [
     description:
       "The study examines how parents with visual impairments and their sighted children establish shared attention and exchange contextual information outdoors. It identifies recurring coordination challenges and offers design strategies for more inclusive family learning technologies.",
     link: "https://doi.org/10.1145/3715070.3749238",
-    thumbnail: "/publications/cscw25.jpg",
+    thumbnail: "/publications/cscw25-web.png",
     thumbnailAlt:
-      "A study investigating communication and attention challenges in informal learning between visually impaired parents and sighted children.",
+      "A system diagram showing AI-mediated interaction between parents and children through audio feedback and real-time visual perception.",
   },
   {
     title:
