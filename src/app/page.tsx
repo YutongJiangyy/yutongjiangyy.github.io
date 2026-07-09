@@ -96,9 +96,9 @@ export default function HomePage() {
         </aside>
 
         <div className="min-w-0">
-          <section className="grid gap-5 pb-14 md:grid-cols-[minmax(180px,0.8fr)_minmax(0,1.2fr)] md:gap-10 xl:gap-16">
+          <section className="pb-14">
             <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
-            <div className="max-w-2xl space-y-4 text-sm leading-7 text-neutral-600 sm:text-base">
+            <div className="mt-6 max-w-3xl space-y-4 text-sm leading-7 text-neutral-600 sm:text-base">
               {researchInterestText.split("\n\n").map((paragraph) => (
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
@@ -179,11 +179,15 @@ function ExperienceSection({
         {items.map((item) => (
           <li key={`${item.title}-${item.organization}`} className="grid gap-2 py-6 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-5">
             <div>
-              <p className="text-sm font-medium text-neutral-900">{item.title}</p>
-              <p className="mt-1 text-sm text-neutral-500">{item.organization}</p>
-              {item.description && <p className="mt-2 text-sm leading-6 text-neutral-500">{item.description}</p>}
+              <p className="text-sm font-medium leading-7 text-neutral-900 sm:text-base">{item.title}</p>
+              <p className="mt-1 text-sm leading-7 text-neutral-500 sm:text-base">{item.organization}</p>
+              {item.description && (
+                <p className="mt-2 text-sm leading-7 text-neutral-500 sm:text-base">{item.description}</p>
+              )}
             </div>
-            <p className="text-xs text-neutral-400 sm:text-right">{item.period ?? item.year}</p>
+            <p className="text-sm leading-7 text-neutral-400 sm:text-right sm:text-base">
+              {item.period ?? item.year}
+            </p>
           </li>
         ))}
       </ul>
