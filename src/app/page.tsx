@@ -98,9 +98,11 @@ export default function HomePage() {
         <div className="min-w-0">
           <section className="grid gap-5 pb-14 md:grid-cols-[minmax(180px,0.8fr)_minmax(0,1.2fr)] md:gap-10 xl:gap-16">
             <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
-            <p className="max-w-2xl text-sm leading-7 text-neutral-600 sm:text-base">
-              {researchInterestText}
-            </p>
+            <div className="max-w-2xl space-y-4 text-sm leading-7 text-neutral-600 sm:text-base">
+              {researchInterestText.split("\n\n").map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           <section id="publications" className="scroll-mt-20 pt-12">
