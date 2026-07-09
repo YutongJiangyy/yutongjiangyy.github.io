@@ -25,7 +25,7 @@ export function PublicationOverview({ description }: { description: string }) {
         />
       </button>
       {isOpen && (
-        <p className="col-span-2 max-w-2xl text-sm leading-6 text-neutral-500">
+        <p className="col-span-2 text-sm leading-6 text-neutral-500">
           {description}
         </p>
       )}

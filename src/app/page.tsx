@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="min-w-0">
           <section className="pb-6">
             <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
-            <div className="mt-6 max-w-3xl space-y-4 text-sm leading-7 text-neutral-600 sm:text-base">
+            <div className="mt-6 max-w-3xl space-y-4 text-sm font-light leading-7 text-neutral-600 sm:text-base">
               {researchInterestText.split("\n\n").map((paragraph) => (
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
@@ -106,22 +106,22 @@ export default function HomePage() {
           </section>
 
           <section id="publications" className="scroll-mt-20 pt-6">
-            <h2 className="mb-12 text-2xl font-light text-neutral-950">Publication</h2>
+            <h2 className="mb-6 text-2xl font-light text-neutral-950">Publication</h2>
 
             <div className="space-y-24 lg:space-y-28">
               {publications.map((pub) => (
                 <article
                   key={pub.title}
-                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-16"
+                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-8"
                 >
                   <div className="min-w-0">
-                    <h3 className="max-w-3xl break-words text-xl font-normal leading-[1.5] text-neutral-950">
+                    <h3 className="break-words text-xl font-normal leading-[1.5] text-neutral-950">
                       {pub.title}
                     </h3>
                     <p className="mt-4 text-sm leading-6 text-neutral-400">
                       {renderAuthors(pub.authors)}
                     </p>
-                    <p className="mt-5 max-w-2xl text-sm leading-6 text-neutral-600">{pub.summary}</p>
+                    <p className="mt-5 text-sm leading-6 text-neutral-600">{pub.summary}</p>
 
                     <div className="mt-6 grid grid-cols-[max-content_minmax(0,1fr)] items-start gap-x-2 gap-y-4">
                       {pub.link && (
