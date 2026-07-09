@@ -43,9 +43,9 @@ export function PublicationImageCarousel({
           aria-hidden={index !== activeIndex}
           fill
           loading="eager"
-          className={`object-cover transition-[opacity,filter] duration-300 ease-out ${
+          className={`object-cover transition-opacity duration-300 ease-out ${
             index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
-          } saturate-[0.7] brightness-95 group-hover/image:saturate-100 group-hover/image:brightness-100`}
+          }`}
           sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
           unoptimized
         />
@@ -53,7 +53,7 @@ export function PublicationImageCarousel({
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[6] rounded-[27px] bg-white/50 transition-opacity duration-300 ease-out group-hover/image:opacity-0"
+        className="pointer-events-none absolute inset-0 z-[6] rounded-[27px] bg-white/40 transition-opacity duration-300 ease-out group-hover/image:opacity-0"
       />
 
       <div
