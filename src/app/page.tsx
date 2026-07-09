@@ -96,7 +96,7 @@ export default function HomePage() {
         </aside>
 
         <div className="min-w-0">
-          <section className="grid items-start gap-5 pb-14 md:grid-cols-[max-content_minmax(0,1fr)] md:gap-6 xl:gap-8">
+          <section className="grid items-start gap-5 pb-14 md:grid-cols-[max-content_minmax(0,1fr)] md:gap-[40px]">
             <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
             <div className="min-w-0 space-y-4 text-sm font-light leading-7 text-neutral-600 sm:text-base">
               {researchInterestText.split("\n\n").map((paragraph) => (
