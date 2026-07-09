@@ -96,7 +96,7 @@ export default function HomePage() {
         </aside>
 
         <div className="min-w-0">
-          <section className="pb-14">
+          <section className="pb-6">
             <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
             <div className="mt-6 max-w-3xl space-y-4 text-sm leading-7 text-neutral-600 sm:text-base">
               {researchInterestText.split("\n\n").map((paragraph) => (
@@ -105,7 +105,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section id="publications" className="scroll-mt-20 pt-12">
+          <section id="publications" className="scroll-mt-20 pt-6">
             <h2 className="mb-12 text-2xl font-light text-neutral-950">Publication</h2>
 
             <div className="space-y-24 lg:space-y-28">
@@ -179,15 +179,13 @@ function ExperienceSection({
         {items.map((item) => (
           <li key={`${item.title}-${item.organization}`} className="grid gap-2 py-6 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-5">
             <div>
-              <p className="text-sm font-medium leading-7 text-neutral-900 sm:text-base">{item.title}</p>
-              <p className="mt-1 text-sm leading-7 text-neutral-500 sm:text-base">{item.organization}</p>
+              <p className="text-sm font-medium text-neutral-900 sm:text-base">{item.title}</p>
+              <p className="mt-1 text-sm text-neutral-500">{item.organization}</p>
               {item.description && (
-                <p className="mt-2 text-sm leading-7 text-neutral-500 sm:text-base">{item.description}</p>
+                <p className="mt-2 text-sm leading-6 text-neutral-500">{item.description}</p>
               )}
             </div>
-            <p className="text-sm leading-7 text-neutral-400 sm:text-right sm:text-base">
-              {item.period ?? item.year}
-            </p>
+            <p className="text-xs text-neutral-400 sm:text-right">{item.period ?? item.year}</p>
           </li>
         ))}
       </ul>
