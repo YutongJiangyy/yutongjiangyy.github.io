@@ -44,17 +44,14 @@ export function PublicationImageCarousel({
           fill
           loading="eager"
           className={`object-cover transition-opacity duration-300 ease-out ${
-            index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
+            index === activeIndex
+              ? "opacity-70 group-hover/image:opacity-100"
+              : "pointer-events-none opacity-0"
           }`}
           sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
           unoptimized
         />
       ))}
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[6] rounded-[27px] bg-white/40 transition-opacity duration-300 ease-out group-hover/image:opacity-0"
-      />
 
       <div
         aria-hidden="true"
