@@ -96,9 +96,9 @@ export default function HomePage() {
         </aside>
 
         <div className="min-w-0">
-          <section className="grid gap-5 pb-14 md:grid-cols-[minmax(180px,0.8fr)_minmax(0,1.2fr)] md:gap-10 xl:gap-16">
+          <section className="grid items-start gap-5 pb-14 md:grid-cols-[max-content_minmax(0,1fr)] md:gap-[40px]">
             <h2 className="text-2xl font-light text-neutral-950">Research Interest</h2>
-            <div className="max-w-2xl space-y-4 text-sm leading-7 text-neutral-600 sm:text-base">
+            <div className="min-w-0 space-y-4 text-sm font-light leading-7 text-neutral-600 sm:text-base">
               {researchInterestText.split("\n\n").map((paragraph) => (
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
@@ -112,16 +112,16 @@ export default function HomePage() {
               {publications.map((pub) => (
                 <article
                   key={pub.title}
-                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-16"
+                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-4"
                 >
                   <div className="min-w-0">
-                    <h3 className="max-w-3xl break-words text-xl font-normal leading-[1.5] text-neutral-950">
+                    <h3 className="break-words text-xl font-normal leading-[1.5] text-neutral-950">
                       {pub.title}
                     </h3>
                     <p className="mt-4 text-sm leading-6 text-neutral-400">
                       {renderAuthors(pub.authors)}
                     </p>
-                    <p className="mt-5 max-w-2xl text-sm leading-6 text-neutral-600">{pub.summary}</p>
+                    <p className="mt-5 text-sm leading-6 text-neutral-600">{pub.summary}</p>
 
                     <div className="mt-6 grid grid-cols-[max-content_minmax(0,1fr)] items-start gap-x-2 gap-y-4">
                       {pub.link && (
@@ -179,9 +179,11 @@ function ExperienceSection({
         {items.map((item) => (
           <li key={`${item.title}-${item.organization}`} className="grid gap-2 py-6 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-5">
             <div>
-              <p className="text-sm font-medium text-neutral-900">{item.title}</p>
+              <p className="text-sm font-medium text-neutral-900 sm:text-base">{item.title}</p>
               <p className="mt-1 text-sm text-neutral-500">{item.organization}</p>
-              {item.description && <p className="mt-2 text-sm leading-6 text-neutral-500">{item.description}</p>}
+              {item.description && (
+                <p className="mt-2 text-sm leading-6 text-neutral-500">{item.description}</p>
+              )}
             </div>
             <p className="text-xs text-neutral-400 sm:text-right">{item.period ?? item.year}</p>
           </li>
