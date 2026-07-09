@@ -45,7 +45,7 @@ export function PublicationImageCarousel({
           loading="eager"
           className={`object-cover transition-opacity duration-300 ease-out ${
             index === activeIndex
-              ? "opacity-70 group-hover/image:opacity-100"
+              ? "opacity-50 group-hover/image:opacity-100"
               : "pointer-events-none opacity-0"
           }`}
           sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
