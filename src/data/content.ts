@@ -70,7 +70,7 @@ export const bio: Bio = {
   shortBio:
     "I am a human–computer interaction researcher focusing on interactive systems, creativity support tools, and AI-augmented interfaces. My work combines qualitative studies with prototype-driven experimentation.",
   researchInterestText:
-    "Seeking to leverage my background in interaction design to create AI-empowered educational solutions. I aim to solve practical problems by applying user-centric methodologies to discover unmet needs and translate them into innovative, impactful learning experiences.",
+    "My research broadly explores how human-centered technologies can support people's learning, communication, and everyday practices. I am especially interested in AI-supported learning and informal learning, while also engaging with broader HCI topics such as social computing, social media analysis, accessibility, and data visualization. In my work on learning, I study learners' unmet needs and explore how technology can make learning more engaging, accessible, and integrated into daily life.\n\nMy work combines qualitative research, human-centered design, system prototyping, and empirical evaluation. Through interviews, contextual observation, design research, and field studies, I examine the behaviors, mechanisms, and contextual conditions that shape people's practices, and translate these insights into design implications and interactive systems. My first-authored work has been published at leading venues such as CHI, CSCW, and Siggraph Asia.",
   cvLinks: [
     { label: "CV (English)", href: "/publications/CV-Jiang.pdf" },
   ],
