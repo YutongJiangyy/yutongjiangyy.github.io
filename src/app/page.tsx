@@ -106,13 +106,13 @@ export default function HomePage() {
           </section>
 
           <section id="publications" className="scroll-mt-20 pt-6">
-            <h2 className="mb-6 text-2xl font-light text-neutral-950">Publication</h2>
+            <h2 className="mb-4 text-2xl font-light text-neutral-950">Publication</h2>
 
             <div className="space-y-24 lg:space-y-28">
               {publications.map((pub) => (
                 <article
                   key={pub.title}
-                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-8"
+                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-4"
                 >
                   <div className="min-w-0">
                     <h3 className="break-words text-xl font-normal leading-[1.5] text-neutral-950">
