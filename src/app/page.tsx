@@ -116,8 +116,8 @@ export default function HomePage() {
                 >
                   <div className="flex h-full min-w-0 flex-col">
                     <div className="min-w-0">
-                      <div className="min-w-0">
-                        <h3 className="inline text-xl font-normal leading-[1.5] text-neutral-950">
+                      <div className="min-w-0 text-xl leading-[1.5]">
+                        <h3 className="inline font-normal text-neutral-950">
                           {pub.title}
                         </h3>
                         {pub.link ? (
