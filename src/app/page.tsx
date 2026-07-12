@@ -116,8 +116,8 @@ export default function HomePage() {
                 >
                   <div className="flex h-full min-w-0 flex-col">
                     <div className="min-w-0">
-                      <div className="flex items-start gap-3">
-                        <h3 className="min-w-0 flex-1 break-words text-xl font-normal leading-[1.5] text-neutral-950">
+                      <div className="min-w-0">
+                        <h3 className="inline text-xl font-normal leading-[1.5] text-neutral-950">
                           {pub.title}
                         </h3>
                         {pub.link ? (
@@ -125,13 +125,13 @@ export default function HomePage() {
                             href={pub.link}
                             target="_blank"
                             rel="noreferrer"
-                            className="mt-1 inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full bg-neutral-100 px-3 text-xs font-medium text-neutral-700 no-underline transition-colors hover:bg-neutral-950 hover:text-white hover:no-underline"
+                            className="ml-2 inline-flex h-6 translate-y-[-2px] items-center gap-1 rounded-full bg-neutral-950 px-2.5 text-[11px] font-semibold leading-none text-white no-underline transition-colors hover:bg-neutral-700 hover:text-white hover:no-underline"
                           >
                             {pub.venue}
-                            <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                            <ArrowUpRight aria-hidden="true" className="h-3 w-3" />
                           </a>
                         ) : (
-                          <span className="mt-1 inline-flex h-8 shrink-0 items-center rounded-full bg-neutral-100 px-3 text-xs font-medium text-neutral-700">
+                          <span className="ml-2 inline-flex h-6 translate-y-[-2px] items-center rounded-full bg-neutral-950 px-2.5 text-[11px] font-semibold leading-none text-white">
                             {pub.venue}
                           </span>
                         )}
