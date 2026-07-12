@@ -72,7 +72,7 @@ export const bio: Bio = {
   researchInterestText:
     "My research broadly explores how human-centered technologies can support people's learning, communication, and everyday practices. I am especially interested in AI-supported learning and informal learning, examining how learning experiences can become more engaging, accessible, and situated in everyday life. I also engaged with broader HCI topics such as social media analysis, accessibility, and data visualization.\n\nMy background combines qualitative research, design inquiry, and hands-on prototyping, including interviews, surveys, participatory design, observation, and field studies. My first-authored work has been published at leading venues such as CHI, CSCW, and Siggraph Asia.",
   cvLinks: [
-    { label: "CV (English)", href: "/publications/CV-Jiang.pdf" },
+    { label: "CV (English)", href: "/publications/CV_yutong.pdf" },
   ],
   social: [
     {
