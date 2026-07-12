@@ -146,9 +146,9 @@ export const publications: Publication[] = [
     venue: "CHI 2026",
     year: "2026",
     summary:
-      "An AI-mediated system that supports shared attention and communication during outdoor learning.",
+      "Reframes assistive AI from visual compensation toward relational mediation in mixed-ability family learning.",
     description:
-      "This work investigates how parents with visual impairments and their sighted children coordinate attention, questions, and learning in outdoor settings. It translates these needs into an AI-mediated design that helps families share observations while preserving the parent's role in guiding the experience.",
+      "Through interviews and observations with 11 families, a design consultation, and a Wizard-of-Oz field study with 14 families, we examine barriers and AI support for outdoor informal learning. We developed Bond, an AI mediator combining a child-worn camera and parent-facing prompts, which strengthened joint attention, dialogue, and parental confidence, motivating the Symbiotic Learning framework as a framework for inclusive, co-constructed learning.",
     link: "https://doi.org/10.1145/3772318.3790604",
     thumbnail: "/publications/bridge-web-1.png",
     thumbnailAlt:
@@ -176,9 +176,9 @@ export const publications: Publication[] = [
     venue: "CHI 2026",
     year: "2026",
     summary:
-      "A content-aware privacy layer that protects sensitive information during web-agent use.",
+      "Balances web-agent privacy oversight with automation through sensitivity-based, tiered delegation.",
     description:
-      "PrivWeb identifies sensitive content as web agents browse and act on a user's behalf, then provides context-aware protection at the moment it is needed. The design aims to reduce unnecessary interruption while giving users clearer control over what an agent can access or disclose.",
+      "Formative interviews with 15 users reveal incomplete mental models and tension between granular control and cognitive load. We build and evaluate PrivWeb through technical testing and a 14-user study, showing that localized redaction and tiered intervention improve privacy protection and trust without increasing cognitive load.",
     link: "https://doi.org/10.1145/3772318.3790919",
     thumbnail: "/publications/chi26_2.jpg",
     thumbnailAlt:
@@ -191,9 +191,9 @@ export const publications: Publication[] = [
     venue: "SIGGRAPH Asia Posters 2025",
     year: "2025",
     summary:
-      "An affective visualization that makes subway-harassment experiences visible and supports empowerment.",
+      "Shifts harassment visualization from victimization toward courage, solidarity, and collective empowerment.",
     description:
-      "This project explores how visual storytelling can communicate the emotional weight of subway harassment without reducing lived experiences to statistics. Its star-based visual language brings individual accounts together to support reflection, awareness, and solidarity.",
+      "We analyze 637 Xiaohongshu posts, 1,381 comments, and 12 policies on Shanghai subway harassment. The resulting interactive star metaphor foregrounds resistance, community support, and institutional response, proposing affective visualization as a way to counter emotional detachment, encourage speaking up, and foster collective awareness.",
     link: "https://doi.org/10.1145/3757374.3771477",
     thumbnail: "/publications/siggraph25.png",
     thumbnailAlt:
@@ -221,9 +221,9 @@ export const publications: Publication[] = [
     venue: "CSCW Companion 2025",
     year: "2025",
     summary:
-      "A study of the communication barriers families encounter during outdoor informal learning.",
+      "Identifies relational imbalances that visual asymmetry creates in outdoor family learning.",
     description:
-      "The study examines how parents with visual impairments and their sighted children establish shared attention and exchange contextual information outdoors. It identifies recurring coordination challenges and offers design strategies for more inclusive family learning technologies.",
+      "Through interviews with nine parents and observations of two families, we examine barriers to outdoor informal learning and identify over-involved, hands-off, and limited-support patterns. The Symbiotic Education Model translates these findings into child-led sensing, conversational scaffolding, and parent empowerment for more balanced co-learning.",
     link: "https://doi.org/10.1145/3715070.3749238",
     thumbnail: "/publications/cscw25-web.png",
     thumbnailAlt:
@@ -236,9 +236,9 @@ export const publications: Publication[] = [
     venue: "CHI EA 2025",
     year: "2025",
     summary:
-      "A visual-metaphor system that turns literature exploration into navigation through a knowledge city.",
+      "Turns 3,052 TVCG papers into a dual-perspective, immersive literature city.",
     description:
-      "City of Wander maps scholarly relationships into an explorable city-like environment. By combining spatial organization with familiar visual metaphors, it helps readers discover research areas, trace connections, and move between overview and detail.",
+      "Using 3,052 TVCG papers, we map themes, citations, and publication years onto parametric buildings and roads. A domain case study and informal VR exhibition testing suggest that dual-perspective exploration makes complex literature more intuitive, memorable, and engaging for non-experts.",
     link: "https://doi.org/10.1145/3706599.3720280",
     thumbnail: "/publications/chiea25.png",
     thumbnailAlt:
