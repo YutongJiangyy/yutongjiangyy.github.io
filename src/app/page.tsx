@@ -119,33 +119,32 @@ export default function HomePage() {
                       <div className="min-w-0 text-xl leading-[1.5]">
                         <h3 className="inline font-normal text-neutral-950">
                           {pub.title}
-                        </h3>
+                        </h3>{" "}
                         {pub.link ? (
                           <a
                             href={pub.link}
                             target="_blank"
                             rel="noreferrer"
-                            className="ml-2 inline-flex h-6 translate-y-[-2px] items-center gap-1 rounded-full bg-neutral-950 px-2.5 text-[11px] font-semibold leading-none text-white no-underline transition-colors hover:bg-neutral-700 hover:text-white hover:no-underline"
+                            className="inline-flex h-7 translate-y-[-3px] items-center gap-1.5 rounded-full bg-neutral-950 px-3 text-xs font-semibold leading-none text-white no-underline transition-colors hover:bg-neutral-700 hover:text-white hover:no-underline"
                           >
                             {pub.venue}
-                            <ArrowUpRight aria-hidden="true" className="h-3 w-3" />
+                            <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
                           </a>
                         ) : (
-                          <span className="ml-2 inline-flex h-6 translate-y-[-2px] items-center rounded-full bg-neutral-950 px-2.5 text-[11px] font-semibold leading-none text-white">
+                          <span className="inline-flex h-7 translate-y-[-3px] items-center rounded-full bg-neutral-950 px-3 text-xs font-semibold leading-none text-white">
                             {pub.venue}
                           </span>
                         )}
                       </div>
-                      <p className="mt-4 text-sm leading-6 text-neutral-400">
+                      <p className="mt-5 text-sm leading-6 text-neutral-400">
                         {renderAuthors(pub.authors)}
                       </p>
-                    </div>
-
-                    <div className="mt-8 xl:mt-auto xl:pt-12">
-                      <PublicationOverview
-                        summary={pub.summary}
-                        description={pub.description}
-                      />
+                      <div className="mt-3">
+                        <PublicationOverview
+                          summary={pub.summary}
+                          description={pub.description}
+                        />
+                      </div>
                     </div>
                   </div>
 
