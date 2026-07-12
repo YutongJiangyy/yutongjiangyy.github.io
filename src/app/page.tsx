@@ -112,30 +112,40 @@ export default function HomePage() {
               {publications.map((pub) => (
                 <article
                   key={pub.title}
-                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:gap-4"
+                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,40%)] xl:items-stretch xl:gap-10"
                 >
-                  <div className="min-w-0">
-                    <h3 className="break-words text-xl font-normal leading-[1.5] text-neutral-950">
-                      {pub.title}
-                    </h3>
-                    <p className="mt-4 text-sm leading-6 text-neutral-400">
-                      {renderAuthors(pub.authors)}
-                    </p>
-                    <p className="mt-5 text-sm leading-6 text-neutral-600">{pub.summary}</p>
+                  <div className="flex h-full min-w-0 flex-col">
+                    <div className="min-w-0">
+                      <div className="flex items-start gap-3">
+                        <h3 className="min-w-0 flex-1 break-words text-xl font-normal leading-[1.5] text-neutral-950">
+                          {pub.title}
+                        </h3>
+                        {pub.link ? (
+                          <a
+                            href={pub.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-1 inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full bg-neutral-100 px-3 text-xs font-medium text-neutral-700 no-underline transition-colors hover:bg-neutral-950 hover:text-white hover:no-underline"
+                          >
+                            {pub.venue}
+                            <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                          </a>
+                        ) : (
+                          <span className="mt-1 inline-flex h-8 shrink-0 items-center rounded-full bg-neutral-100 px-3 text-xs font-medium text-neutral-700">
+                            {pub.venue}
+                          </span>
+                        )}
+                      </div>
+                      <p className="mt-4 text-sm leading-6 text-neutral-400">
+                        {renderAuthors(pub.authors)}
+                      </p>
+                    </div>
 
-                    <div className="mt-6 grid grid-cols-[max-content_minmax(0,1fr)] items-start gap-x-2 gap-y-4">
-                      {pub.link && (
-                        <a
-                          href={pub.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex h-8 items-center gap-1.5 rounded-full border border-neutral-300 px-3 text-xs font-bold text-neutral-800 no-underline transition-colors hover:border-neutral-950 hover:bg-neutral-950 hover:text-white hover:no-underline"
-                        >
-                          {pub.venue}
-                          <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
-                        </a>
-                      )}
-                      <PublicationOverview description={pub.description} />
+                    <div className="mt-8 xl:mt-auto xl:pt-12">
+                      <PublicationOverview
+                        summary={pub.summary}
+                        description={pub.description}
+                      />
                     </div>
                   </div>
 
