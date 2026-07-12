@@ -32,7 +32,9 @@ export function PublicationImageCarousel({
   };
 
   return (
-    <div className={`relative aspect-[4/3] min-w-0 self-start overflow-hidden rounded-[28px] border border-neutral-200 bg-white ${className}`}>
+    <div
+      className={`group/image relative aspect-[4/3] min-w-0 self-start overflow-hidden rounded-[28px] border border-neutral-200 bg-white ${className}`}
+    >
       {images.map((image, index) => (
         <Image
           key={image.src}
@@ -41,8 +43,10 @@ export function PublicationImageCarousel({
           aria-hidden={index !== activeIndex}
           fill
           loading="eager"
-          className={`object-cover transition-opacity duration-150 ${
-            index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
+          className={`object-cover transition-opacity duration-300 ease-out ${
+            index === activeIndex
+              ? "opacity-50 group-hover/image:opacity-100"
+              : "pointer-events-none opacity-0"
           }`}
           sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
           unoptimized
