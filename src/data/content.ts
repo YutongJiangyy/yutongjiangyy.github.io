@@ -186,6 +186,21 @@ export const publications: Publication[] = [
   },
   {
     title:
+      "How Study Hacks Come to Life: Learners' Engagement Modes in Turning Short-Form Videos into Informal Learning Practices",
+    authors: "Yutong Jiang, Qixuan Xu, Guanhong Liu",
+    venue: "CSCW Companion 2026",
+    year: "2026",
+    summary:
+      "Reframes social-media learning as a negotiated, cyclical process of adapting generalized advice.",
+    description:
+      "Through semi-structured interviews with 15 regular viewers, we examine how learners translate study-hack videos into practice and what challenges arise. We identify four engagement modes shaped by triggering, saving-based filtering, contextual adaptation, and long-term adjustment, showing that social-media learning depends on situated, iterative coordination between platform resources and personal contexts.",
+    link: "/publications/CSCW2026_Social_Media_Study_Hacks.pdf",
+    thumbnail: "/publications/cscw26-study-hacks.png",
+    thumbnailAlt:
+      "Four recurring engagement modes for turning short-form study-hack videos into informal learning practices.",
+  },
+  {
+    title:
       "When Stars Shine through Silence: Affective Visualization as Empowerment for Victims of Subway Harassment",
     authors: "Yutong Jiang, Xiaoke Yan, Chuyi Zheng, Yang Shi, Qing Chen, Nan Cao",
     venue: "SIGGRAPH Asia Posters 2025",
