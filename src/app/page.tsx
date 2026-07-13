@@ -19,10 +19,10 @@ export default function HomePage() {
         <a href="#internship">Internship</a>
       </nav>
 
-      <div className="mt-12 grid items-start gap-14 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-14 xl:gap-20">
-        <aside className="font-light lg:sticky lg:top-24">
-          <div className="flex items-start gap-5 lg:block">
-            <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-full bg-neutral-100 lg:mb-7 lg:w-32">
+      <div className="mt-12 grid items-start gap-14 min-[860px]:grid-cols-[300px_minmax(0,1fr)] min-[860px]:gap-10 lg:gap-14 xl:gap-20">
+        <aside className="font-light min-[860px]:sticky min-[860px]:top-24">
+          <div className="flex items-start gap-5 min-[860px]:block">
+            <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-full bg-neutral-100 min-[860px]:mb-7 min-[860px]:w-32">
               <Image
                 src="/publications/avatar.jpg"
                 alt={bio.name}
