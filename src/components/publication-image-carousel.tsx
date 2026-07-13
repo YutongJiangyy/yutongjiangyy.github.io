@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { PointerEvent } from "react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 interface CarouselImage {
   src: string;
@@ -23,55 +22,17 @@ export function PublicationImageCarousel({
 }: PublicationImageCarouselProps) {
   const safeInitialIndex = images.length > 0 && initialIndex >= 0 ? initialIndex % images.length : 0;
   const [activeIndex, setActiveIndex] = useState(safeInitialIndex);
-  const [direction, setDirection] = useState(1);
-  const swipeStart = useRef<{ x: number; y: number } | null>(null);
 
   const showPrevious = () => {
-    setDirection(-1);
     setActiveIndex((current) => (current - 1 + images.length) % images.length);
   };
 
   const showNext = () => {
-    setDirection(1);
     setActiveIndex((current) => (current + 1) % images.length);
   };
 
-  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (images.length < 2) {
-      return;
-    }
-    swipeStart.current = { x: event.clientX, y: event.clientY };
-  };
-
-  const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
-    if (!swipeStart.current || images.length < 2) {
-      return;
-    }
-
-    const deltaX = event.clientX - swipeStart.current.x;
-    const deltaY = event.clientY - swipeStart.current.y;
-    swipeStart.current = null;
-
-    if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
-      return;
-    }
-
-    if (deltaX < 0) {
-      showNext();
-    } else {
-      showPrevious();
-    }
-  };
-
   return (
-    <div
-      className={`relative aspect-[4/3] min-w-0 touch-pan-y self-start overflow-hidden rounded-[28px] border border-neutral-200 bg-white ${className}`}
-      onPointerDown={handlePointerDown}
-      onPointerLeave={() => {
-        swipeStart.current = null;
-      }}
-      onPointerUp={handlePointerUp}
-    >
+    <div className={`relative aspect-[4/3] min-w-0 self-start overflow-hidden rounded-[28px] border border-neutral-200 bg-white ${className}`}>
       {images.map((image, index) => (
         <Image
           key={image.src}
@@ -80,10 +41,8 @@ export function PublicationImageCarousel({
           aria-hidden={index !== activeIndex}
           fill
           loading="eager"
-          className={`object-cover transition-[opacity,transform] duration-500 ease-out ${
-            index === activeIndex
-              ? "translate-x-0 scale-100 opacity-100"
-              : `pointer-events-none opacity-0 ${direction > 0 ? "translate-x-5" : "-translate-x-5"} scale-[1.02]`
+          className={`object-cover transition-opacity duration-150 ${
+            index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
           sizes="(min-width: 1120px) 38vw, (min-width: 1024px) 70vw, 100vw"
           unoptimized
