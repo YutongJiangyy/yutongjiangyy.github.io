@@ -52,7 +52,7 @@ export interface Publication {
 }
 
 export interface ExperienceItem {
-  type: "internship" | "award";
+  type: "internship" | "award" | "teaching";
   title: string;
   organization: string;
   location?: string;
@@ -329,9 +329,22 @@ export const experiences: ExperienceItem[] = [
     organization: "Ministry of Education of China",
     year: "2022",
   },
+  {
+    type: "teaching",
+    title: "Design Studio 2: Co-design Project",
+    organization: "Postgraduate course",
+    period: "Teaching Assistant, 2025",
+  },
+  {
+    type: "teaching",
+    title: "Professional Practice in Design",
+    organization: "Undergraduate course",
+    period: "Teaching Assistant, 2022",
+  },
 ];
 
 export const internships: ExperienceItem[] = experiences.filter((e) => e.type === "internship");
 export const awards: ExperienceItem[] = experiences.filter((e) => e.type === "award");
+export const teaching: ExperienceItem[] = experiences.filter((e) => e.type === "teaching");
 
 export const researchInterestText: string = bio.researchInterestText;

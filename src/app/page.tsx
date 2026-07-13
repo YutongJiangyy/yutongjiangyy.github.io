@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight, FileText } from "lucide-react";
-import { awards, bio, internships, news, publications, researchInterestText } from "@/data/content";
+import { awards, bio, internships, news, publications, researchInterestText, teaching } from "@/data/content";
 import type { ExperienceItem } from "@/data/content";
 import { PublicationImageCarousel } from "@/components/publication-image-carousel";
 import { PublicationOverview } from "@/components/publication-overview";
@@ -165,6 +165,10 @@ export default function HomePage() {
           <div className="mt-28 grid gap-20 xl:grid-cols-2 xl:gap-24">
             <ExperienceSection id="awards" title="Awards" items={awards} />
             <ExperienceSection id="internship" title="Internship" items={internships} />
+          </div>
+
+          <div className="mt-20 grid gap-20 xl:grid-cols-2 xl:gap-24">
+            <ExperienceSection id="teaching" title="Teaching" items={teaching} />
           </div>
         </div>
       </div>
