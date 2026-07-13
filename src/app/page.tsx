@@ -17,6 +17,7 @@ export default function HomePage() {
         <a href="#publications">Publications</a>
         <a href="#awards">Awards</a>
         <a href="#internship">Internship</a>
+        <a href="#teaching">Teaching</a>
       </nav>
 
       <div className="mt-12 grid items-start gap-14 min-[860px]:grid-cols-[300px_minmax(0,1fr)] min-[860px]:gap-10 lg:gap-14 xl:gap-20">
