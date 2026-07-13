@@ -19,7 +19,7 @@ export default function HomePage() {
         <a href="#internship">Internship</a>
       </nav>
 
-      <div className="mt-12 grid items-start gap-14 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-20">
+      <div className="mt-12 grid items-start gap-14 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-14 xl:gap-20">
         <aside className="font-light lg:sticky lg:top-24">
           <div className="flex items-start gap-5 lg:block">
             <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-full bg-neutral-100 lg:mb-7 lg:w-32">
@@ -112,7 +112,7 @@ export default function HomePage() {
               {publications.map((pub) => (
                 <article
                   key={pub.title}
-                  className="group/publication grid min-w-0 gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(320px,40%)] xl:items-stretch xl:gap-10"
+                  className="group/publication grid min-w-0 gap-7 min-[1120px]:grid-cols-[minmax(0,1fr)_minmax(300px,40%)] min-[1120px]:items-stretch min-[1120px]:gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(320px,40%)] xl:gap-10"
                 >
                   <div className="flex h-full min-w-0 flex-col">
                     <div className="min-w-0">

@@ -44,7 +44,7 @@ export function PublicationImageCarousel({
           className={`object-cover transition-opacity duration-150 ${
             index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
-          sizes="(min-width: 1280px) 38vw, (min-width: 1024px) 70vw, 100vw"
+          sizes="(min-width: 1120px) 38vw, (min-width: 1024px) 70vw, 100vw"
           unoptimized
         />
       ))}
