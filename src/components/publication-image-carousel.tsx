@@ -100,7 +100,10 @@ export function PublicationImageCarousel({
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
           onClick={() => setIsExpanded(false)}
         >
-          <div className="relative h-full max-h-[92vh] w-full max-w-6xl">
+          <div
+            className="relative h-full max-h-[92vh] w-full max-w-6xl"
+            onClick={(event) => event.stopPropagation()}
+          >
             <Image
               src={activeImage.src}
               alt={activeImage.alt}
@@ -110,11 +113,45 @@ export function PublicationImageCarousel({
               unoptimized
             />
           </div>
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  showPrevious();
+                }}
+                aria-label="Previous expanded publication image"
+                title="Previous image"
+                className="absolute left-4 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-white/95 text-neutral-800 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-6"
+              >
+                <ChevronLeft aria-hidden="true" className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  showNext();
+                }}
+                aria-label="Next expanded publication image"
+                title="Next image"
+                className="absolute right-4 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-white/95 text-neutral-800 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-6"
+              >
+                <ChevronRight aria-hidden="true" className="h-5 w-5" />
+              </button>
+              <div className="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/95 px-3 py-1 text-xs tabular-nums text-neutral-600">
+                {activeIndex + 1} / {images.length}
+              </div>
+            </>
+          )}
           <button
             type="button"
             aria-label="Close expanded image"
             title="Close"
-            onClick={() => setIsExpanded(false)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setIsExpanded(false);
+            }}
             className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-white/95 text-neutral-800 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <X aria-hidden="true" className="h-5 w-5" />
