@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { PointerEvent, TouchEvent } from "react";
+import type { MouseEvent, TouchEvent } from "react";
 import { useRef, useState } from "react";
 
 interface CarouselImage {
@@ -45,7 +45,7 @@ export function PublicationImageCarousel({
 
   const finishExpandedSwipe = (x: number, y: number) => {
     if (!expandedSwipeStart.current || images.length < 2) {
-      return;
+      return false;
     }
 
     const deltaX = x - expandedSwipeStart.current.x;
@@ -53,7 +53,7 @@ export function PublicationImageCarousel({
     expandedSwipeStart.current = null;
 
     if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
-      return;
+      return false;
     }
 
     if (deltaX < 0) {
@@ -62,19 +62,18 @@ export function PublicationImageCarousel({
       showPrevious();
     }
     expandedSwipeHandled.current = true;
+    return true;
   };
 
-  const handleExpandedPointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === "touch") {
-      return;
-    }
+  const handleExpandedMouseDown = (event: MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
     startExpandedSwipe(event.clientX, event.clientY);
   };
 
-  const handleExpandedPointerUp = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === "touch") {
-      return;
-    }
+  const handleExpandedMouseUp = (event: MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
     finishExpandedSwipe(event.clientX, event.clientY);
   };
 
@@ -83,6 +82,7 @@ export function PublicationImageCarousel({
     if (!touch) {
       return;
     }
+    event.stopPropagation();
     startExpandedSwipe(touch.clientX, touch.clientY);
   };
 
@@ -91,6 +91,7 @@ export function PublicationImageCarousel({
     if (!touch) {
       return;
     }
+    event.stopPropagation();
     finishExpandedSwipe(touch.clientX, touch.clientY);
   };
 
@@ -158,7 +159,7 @@ export function PublicationImageCarousel({
 
       {isExpanded && activeImage && (
         <div
-          className="fixed inset-0 z-50 flex touch-pan-y items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
           onClick={() => {
             if (expandedSwipeHandled.current) {
               expandedSwipeHandled.current = false;
@@ -166,27 +167,25 @@ export function PublicationImageCarousel({
             }
             setIsExpanded(false);
           }}
-          onPointerCancel={() => {
-            expandedSwipeStart.current = null;
-          }}
-          onPointerDown={handleExpandedPointerDown}
-          onPointerLeave={() => {
-            expandedSwipeStart.current = null;
-          }}
-          onPointerUp={handleExpandedPointerUp}
-          onTouchCancel={() => {
-            expandedSwipeStart.current = null;
-          }}
-          onTouchEnd={handleExpandedTouchEnd}
-          onTouchStart={handleExpandedTouchStart}
         >
           <div
-            className="relative h-full max-h-[92vh] w-full max-w-6xl"
+            className="relative h-full max-h-[92vh] w-full max-w-6xl cursor-grab select-none touch-none active:cursor-grabbing"
             onClick={(event) => event.stopPropagation()}
+            onMouseDown={handleExpandedMouseDown}
+            onMouseLeave={() => {
+              expandedSwipeStart.current = null;
+            }}
+            onMouseUp={handleExpandedMouseUp}
+            onTouchCancel={() => {
+              expandedSwipeStart.current = null;
+            }}
+            onTouchEnd={handleExpandedTouchEnd}
+            onTouchStart={handleExpandedTouchStart}
           >
             <Image
               src={activeImage.src}
               alt={activeImage.alt}
+              draggable={false}
               fill
               className="object-contain"
               sizes="100vw"
