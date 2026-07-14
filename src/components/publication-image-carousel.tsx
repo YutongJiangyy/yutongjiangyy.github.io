@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useState } from "react";
+import type { PointerEvent } from "react";
+import { useRef, useState } from "react";
 
 interface CarouselImage {
   src: string;
@@ -23,6 +24,7 @@ export function PublicationImageCarousel({
   const safeInitialIndex = images.length > 0 && initialIndex >= 0 ? initialIndex % images.length : 0;
   const [activeIndex, setActiveIndex] = useState(safeInitialIndex);
   const [isExpanded, setIsExpanded] = useState(false);
+  const expandedSwipeStart = useRef<{ x: number; y: number } | null>(null);
   const activeImage = images[activeIndex];
 
   const showPrevious = () => {
@@ -31,6 +33,33 @@ export function PublicationImageCarousel({
 
   const showNext = () => {
     setActiveIndex((current) => (current + 1) % images.length);
+  };
+
+  const handleExpandedPointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (images.length < 2) {
+      return;
+    }
+    expandedSwipeStart.current = { x: event.clientX, y: event.clientY };
+  };
+
+  const handleExpandedPointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    if (!expandedSwipeStart.current || images.length < 2) {
+      return;
+    }
+
+    const deltaX = event.clientX - expandedSwipeStart.current.x;
+    const deltaY = event.clientY - expandedSwipeStart.current.y;
+    expandedSwipeStart.current = null;
+
+    if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      showNext();
+    } else {
+      showPrevious();
+    }
   };
 
   return (
@@ -97,8 +126,16 @@ export function PublicationImageCarousel({
 
       {isExpanded && activeImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex touch-pan-y items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
           onClick={() => setIsExpanded(false)}
+          onPointerCancel={() => {
+            expandedSwipeStart.current = null;
+          }}
+          onPointerDown={handleExpandedPointerDown}
+          onPointerLeave={() => {
+            expandedSwipeStart.current = null;
+          }}
+          onPointerUp={handleExpandedPointerUp}
         >
           <div
             className="relative h-full max-h-[92vh] w-full max-w-6xl"
