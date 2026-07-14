@@ -98,17 +98,20 @@ export const aboutMeText =
 
 export const news: NewsItem[] = [
   {
+    date: "2026.07",
+    title: "One poster accepted by CSCW 2026.",
+  },
+  {
     date: "2026.03",
     title: "Excited to share that two of our papers were accepted at CHI 2026.",
   },
   {
     date: "2025.12",
-    title: "Attended SIGGRAPH Asia 2025 in Hong Kong.",
+    title: "One poster presented at SIGGRAPH Asia 2025 in Hong Kong.",
   },
   {
     date: "2025.10",
-    title: "Attended CSCW 2025 in Bergen, Norway.",
-    text: "It was a wonderful opportunity to learn from inspiring work in the community.",
+    title: "One poster presented at CSCW 2025 in Bergen, Norway.",
   },
 ];
 
